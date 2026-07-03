@@ -169,6 +169,10 @@ Invalid data found when processing input
 ffmpeg -i "input.avi" -c:v libx264 -c:a aac "output.mp4"
 ```
 
+`-i "input.avi"`는 입력 파일로 input.avi를 사용한다는 것이다.
+`-c:v libx264`에서 c는 codec의 줄임이고 v는 video의 줄임이다. H.264로 input.avi를 압축하라는 뜻이다.
+`-c:a aac`에서 a는 audio이다. AAC 코덱으로 다시 압축하라는 뜻이다.
+
 ```
 input.avi 읽기
 ↓
@@ -191,6 +195,28 @@ ffmpeg -i "input.avi" -c copy "output.mp4"
 ```
 
 여기서 `-c copy`는 비디오/오디오 압축 데이터를 그대로 복사하고 컨테이너만 바꾸라는 뜻이다.
+
+**주의!! 단순히 windows에서 제공하는 이름 바꾸기로 avi확장명을 mp4로 바꾼다고 해서 컨테이너는 바뀌지 않는다.**
+원래 파일이 다음과 같다고 하자.
+
+```
+input.avi
+├─ 컨테이너: AVI
+├─ 비디오 코덱: Xvid
+└─ 오디오 코덱: MP3
+```
+
+이름만 바꾸게 되면
+
+```
+input.mp4
+├─ 실제 컨테이너: AVI
+├─ 비디오 코덱: Xvid
+└─ 오디오 코덱: MP3
+```
+
+즉, 겉 이름은 .mp4가 되었지만 파일 내부는 여전히 .avi이다.
+그래서 리먹싱을 하는 것이다.
 
 <a id="codec"></a>
 ## 번외, 코덱이 무엇인가?
