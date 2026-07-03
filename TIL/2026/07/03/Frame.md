@@ -1,4 +1,4 @@
- #Frame
+ # Frame
 
  ## frame이란 무엇인가?
 `frame` 안에는 프레임 이미지가 숫자 numpy 배열로 표현된다.
