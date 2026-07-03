@@ -50,8 +50,79 @@ cv2.destroyAllWindows()
 ```
 
 ### `cap.isOpened()`란?
-비디오가 제대로 열렸는지 확인한다.
-파일 경로가 틀렸거나, 파일이 깨졌거나, [`*코덱`](#codec) 문제가 있으면 열리지 않을 수 있다.
+`.isOpened()`는 이 영상 파일을 읽을 준비를 성공했는가를 보는 것이다.
+
+```python
+cap = cv2.VideoCapture("video.mp4")
+```
+
+이 코드가 실행되면 OpenCV는 내부적으로 다음과 같은 일을 한다.
+
+```
+파일 경로 확인
+↓
+파일 열기 시도
+↓
+컨테이너 확인
+예: MP4, AVI, MOV
+↓
+컨테이너 안에서 비디오 트랙 찾기
+↓
+비디오 코덱 정보 확인
+예: H.264, H.265, MJPEG, Xvid
+↓
+해당 코덱을 처리할 디코더 준비
+↓
+성공하면 VideoCapture 객체가 열린 상태가 됨
+```
+
+위 모든 단계는 `.isOpened()`가 검증해야할 위혐 요소들이다.
+
+모든 단계를 문제 없이 지나와야 True를 반환하는 것이다.
+
+#### 왜 False가 나오는가?
+`.isOpened()`가 False라는 것은 읽을 준비 단계에서 실패했다는 것이다.
+
+위험 요소는 다음과 같이 나누어볼 수 있다.
+1. 파일 경로가 잘못 되었거나 존재하지 않을 때, 존재는 하지만 파일이 아닐 때
+2. 코덱 문제
+    - 코덱을 읽기 실패했을 때
+    - 해당 컨테이너 안에 들어 있는 코덱으로 압축 데이터를 해석하기 어려울 때
+3. 디코더 문제
+    - 코덱은 알지만 디코더가 존재하지 않을 때 => 디코더 초기화 실패한 것
+  
+`1.`, `3.`같은 경우는 단순 분기문으로 해결할 수 있다.
+
+```python
+# 1. 파일 존재 확인
+if not video_path.exists():
+    raise FileNotFoundError(f"비디오 파일이 존재하지 않습니다: {video_path}")
+
+# 2. 실제 파일인지 확인
+if not video_path.is_file():
+    raise ValueError(f"비디오 경로가 파일이 아닙니다: {video_path}")
+
+# 3. OpenCV로 열기
+cap = cv2.VideoCapture(str(video_path))
+
+if not cap.isOpened():
+    raise ValueError(
+        f"OpenCV가 비디오를 열 수 없습니다: {video_path}"
+    )
+
+# 4. 첫 프레임 읽기 확인
+ret, frame = cap.read()
+
+if not ret:
+    raise ValueError(
+        f"비디오를 열었지만 첫 프레임을 읽을 수 없습니다: {video_path}\n"
+        "코덱 디코딩 문제이거나 영상 데이터가 손상되었을 수 있습니다."
+    )
+```
+
+하지만, `2.` 같은 경우는 프로그래머가 직접 ffprobe를 이용하여 원인을 분석해야 한다.
+
+
 
 <a id="codec"></a>
 ## 번외, 코덱이 무엇인가?
