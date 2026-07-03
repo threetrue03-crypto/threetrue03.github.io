@@ -1,0 +1,212 @@
+# pathlib.Path
+
+## Path란?
+> 파일 경로나 폴더 경로를 문자열보다 편하게 다루기 위한 도구이다.
+
+**기존 방식**
+```python
+folder = "data"
+file_name = "input.txt"
+
+file_path = folder + "/" + file_name
+```
+
+하지만 **```Path```**를 사용하면
+```python
+from pathlib import Path
+
+folder = Path("data")
+file_path = folder / "input.txt" # data/input.txt 가 만들어진다.
+```
+
+## 자주 쓰는 기능
+
+| 기능                                     | 의미            |
+| :------------------------------------- | :------------ |
+| `Path("경로")`                           | 경로 객체 만들기     |
+| `folder / "file.txt"`                  | 경로 합치기        |
+| `path.exists()`                        | 존재 여부 확인      |
+| `path.is_file()`                       | 파일인지 확인       |
+| `path.is_dir()`                        | 폴더인지 확인       |
+| [**`path.mkdir()`**](#mkdir)           | 폴더 만들기        |
+| `path.name`                            | 파일명           |
+| `path.stem`                            | 확장자 뺀 파일명     |
+| `path.suffix`                          | 확장자           |
+| `path.parent`                          | 상위 폴더         |
+| [**`path.read_text()`**](#read_text)   | 텍스트 읽기        |
+| [**`path.write_text()`**](#write_text) | 텍스트 쓰기        |
+| [**`path.glob("*.png")`**](#glob)      | 패턴으로 파일 찾기    |
+| [**`path.rglob("*.py")`**](#rglob)     | 하위 폴더까지 파일 찾기 |
+| `path.resolve()`                       | 절대경로 확인       |
+| `Path.cwd()`                           | 현재 실행 폴더      |
+| [**`path.unlink()`**](#unlink)         | 파일 삭제         |
+| [**`path.iterdir()`**](#iterdir)       | 폴더 안 목록 보기    |
+
+<a id="mkdir"></a>
+
+### `.mkdir()`
+
+폴더를 만드는 기능이다.
+
+```python
+folder = Path("outputs")
+folder.mkdir()
+```
+
+그런데 이미 outputs 폴더가 있으면 에러가 날 수 있다.
+
+그래서 보통 이렇게 많이 쓴다.
+
+```python
+folder = Path("outputs/images")
+folder.mkdir(parents=True, exist_ok=True)
+```
+
+`parents=True` 중간 폴더까지 같이 만들기
+
+`exist_ok=True` 이미 있어도 에러 안 내기
+
+> outputs 폴더가 없는데 outputs/images를 만들려면 parents=True가 필요하다.
+
+<a id="read_text"></a>
+
+### `.read_text()`
+
+텍스트 파일을 읽어오는 기능이다.
+
+```python
+path = Path("data/input.txt")
+
+text = path.read_text(encoding="utf-8")
+print(text)
+```
+
+기존 방식은 다음과 같다.
+
+```python
+with open("data/input.txt", "r", encoding="utf-8") as f:
+    text = f.read()
+```
+
+`read_text()`를 사용하면 기존 방식보다 짧게 텍스트 파일을 읽을 수 있다.
+
+`encoding="utf-8"` 한글이 깨지지 않도록 인코딩 방식을 지정하기
+
+> 한글이 포함된 텍스트 파일을 읽을 때는 encoding="utf-8"을 함께 사용하는 것이 좋다.
+
+<a id="write_text"></a>
+
+### `.write_text()`
+
+텍스트 파일에 내용을 저장하는 기능이다.
+
+```python
+path = Path("outputs/result.txt")
+
+path.write_text("hello world", encoding="utf-8")
+```
+
+파일이 없으면 새로 생성하고, 이미 파일이 있으면 기존 내용을 덮어쓴다.
+
+`"hello world"` 파일에 저장할 내용
+
+`encoding="utf-8"` 한글이 깨지지 않도록 인코딩 방식을 지정하기
+
+> 기존 파일이 있으면 내용이 덮어쓰기 되므로 주의해야 한다.
+
+<a id="glob"></a>
+
+### `.glob()`
+
+현재 폴더에서 특정 패턴에 맞는 파일을 찾는 기능이다.
+
+```python
+folder = Path("images")
+
+for path in folder.glob("*.png"):
+    print(path)
+```
+
+`"*.png"` 현재 폴더 안에 있는 모든 PNG 파일 찾기
+
+예시는 다음과 같다.
+
+```text
+images/frame001.png
+images/frame002.png
+images/frame003.png
+```
+
+> glob()은 지정한 폴더의 바로 아래에 있는 파일들을 중심으로 탐색한다.
+
+<a id="rglob"></a>
+
+### `.rglob()`
+
+현재 폴더뿐만 아니라 하위 폴더까지 전부 탐색해서 특정 패턴에 맞는 파일을 찾는 기능이다.
+
+```python
+folder = Path("project")
+
+for path in folder.rglob("*.py"):
+    print(path)
+```
+
+`"*.py"` 현재 폴더와 모든 하위 폴더에서 파이썬 파일 찾기
+
+예시는 다음과 같다.
+
+```text
+project/main.py
+project/utils/parser.py
+project/models/alignment.py
+```
+
+> glob()은 현재 폴더 중심으로 탐색하고, rglob()은 하위 폴더까지 재귀적으로 탐색한다.
+
+<a id="unlink"></a>
+
+### `.unlink()`
+
+파일을 삭제하는 기능이다.
+
+```python
+path = Path("outputs/temp.txt")
+path.unlink()
+```
+
+파일이 없을 때 실행하면 에러가 날 수 있다.
+
+그래서 보통 이렇게 확인하고 사용한다.
+
+```python
+if path.exists():
+    path.unlink()
+```
+
+> unlink()는 폴더가 아니라 파일을 삭제할 때 사용한다.
+
+---
+
+<a id="iterdir"></a>
+
+### `.iterdir()`
+
+폴더 안에 있는 파일과 폴더 목록을 하나씩 확인하는 기능이다.
+
+```python
+folder = Path("data")
+
+for item in folder.iterdir():
+    print(item)
+```
+
+예시는 다음과 같다.
+
+```text
+data/input.txt
+data/images
+data/result.csv
+```
+
+> iterdir()는 지정한 폴더 바로 아래에 있는 항목들을 확인할 때 사용한다.
