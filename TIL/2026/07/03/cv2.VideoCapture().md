@@ -121,8 +121,38 @@ if not ret:
 ```
 
 하지만, `2.` 같은 경우는 프로그래머가 직접 ffprobe를 이용하여 원인을 분석해야 한다.
+우선, ffmpeg를 설치하여 터미널에 다음과 같은 명령어를 입력한다.
 
+```
+ffprobe "video.mp4"
+```
 
+만약 정상이라면 보통 다음과 같은 정보가 출력된다.
+
+```
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'video.mp4':
+  Stream #0:0: Video: h264, yuv420p, 1920x1080, 30 fps
+  Stream #0:1: Audio: aac, 44100 Hz, stereo
+```
+> 컨테이너 읽음
+
+> 비디오 스트림 찾음
+
+> 비디오 코덱 h264 확인함
+
+> 오디오 코덱 aac 확인함
+
+하지만, ffprobe 자체가 실패하는 경우도 있다.
+
+```
+Invalid data found when processing input
+```
+
+이 경우는 파일 손상, 컨테이너 구조 손상으로 생각해볼 수 있을 것이다.
+
+컨테이너 안의 코덱 조합이 불안정할 수 있다.
+
+이럴 때는, 프로그래머가 컨테이너와 코덱 조합을 적절히 매칭해야 한다.
 
 <a id="codec"></a>
 ## 번외, 코덱이 무엇인가?
