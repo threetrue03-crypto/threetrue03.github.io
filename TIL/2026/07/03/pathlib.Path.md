@@ -42,6 +42,8 @@ file_path = folder / "input.txt" # data/input.txt 가 만들어진다.
 | [**`path.unlink()`**](#unlink)         | 파일 삭제         |
 | [**`path.iterdir()`**](#iterdir)       | 폴더 안 목록 보기    |
 
+---
+
 <a id="mkdir"></a>
 
 ### `.mkdir()`
@@ -67,6 +69,8 @@ folder.mkdir(parents=True, exist_ok=True)
 `exist_ok=True` 이미 있어도 에러 안 내기
 
 > outputs 폴더가 없는데 outputs/images를 만들려면 parents=True가 필요하다.
+
+---
 
 <a id="read_text"></a>
 
@@ -94,6 +98,8 @@ with open("data/input.txt", "r", encoding="utf-8") as f:
 
 > 한글이 포함된 텍스트 파일을 읽을 때는 encoding="utf-8"을 함께 사용하는 것이 좋다.
 
+---
+
 <a id="write_text"></a>
 
 ### `.write_text()`
@@ -113,6 +119,8 @@ path.write_text("hello world", encoding="utf-8")
 `encoding="utf-8"` 한글이 깨지지 않도록 인코딩 방식을 지정하기
 
 > 기존 파일이 있으면 내용이 덮어쓰기 되므로 주의해야 한다.
+
+---
 
 <a id="glob"></a>
 
@@ -139,6 +147,8 @@ images/frame003.png
 
 > glob()은 지정한 폴더의 바로 아래에 있는 파일들을 중심으로 탐색한다.
 
+---
+
 <a id="rglob"></a>
 
 ### `.rglob()`
@@ -163,6 +173,8 @@ project/models/alignment.py
 ```
 
 > glob()은 현재 폴더 중심으로 탐색하고, rglob()은 하위 폴더까지 재귀적으로 탐색한다.
+
+---
 
 <a id="unlink"></a>
 
