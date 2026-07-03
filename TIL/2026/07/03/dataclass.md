@@ -1,8 +1,8 @@
 # dataclass of dataclasses
 ## 목차
 - [`dataclass란?`](#dataclass)
-- [`\_\_post\_init__(self) 란?`](#post_init)
-- [`번외, \_\_doc__`](#doc)
+- [`__post_init__(self) 란?`](#post_init)
+- [`번외, __doc__`](#doc)
 
 <a id="dataclass"></a>
 ## ```dataclass```란?
