@@ -1,0 +1,4 @@
+title: Sejin.dev
+description: 조세진의 기술 블로그
+markdown: kramdown
+permalink: /posts/:title/
