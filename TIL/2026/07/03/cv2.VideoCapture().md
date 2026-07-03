@@ -232,7 +232,64 @@ ret, frame = cap.read()
 
 여기서 frame은 높이, 너비, 채널 수를 가진다.
 
+#### frame이란 무엇인가?
+`frame` 안에는 프레임 이미지가 숫자 numpy 배열로 표현된다.
 
+우선, 영상 크기가 만약 `1920 x 1080` 이면
+
+```python
+print(frame.shape)
+```
+
+```
+(1080, 1920, 3)
+```
+
+로 출력된다.
+
+의미는 각각 **(세로 픽셀 수, 가로 픽셀 수, 색상 채널 수)** 이다.
+OpenCV에서는 색상 채널을 RGB가 아니라 BGR로 사용한다.
+
+이미지 전체는 다음과 같이 생겼다고 보면 된다.
+
+```
+frame
+=
+[
+  [픽셀, 픽셀, 픽셀, 픽셀, ...],
+  [픽셀, 픽셀, 픽셀, 픽셀, ...],
+  [픽셀, 픽셀, 픽셀, 픽셀, ...],
+  ...
+]
+```
+
+각 픽셀은 다시 색상값 3개를 가진다.
+
+```
+픽셀 = [B, R, G]
+```
+
+### `cap.read()`란?
+`.read()`는 영상에서 frame 한 장을 읽는다.
+
+여기서도 반환값은 `ret`, `frame`으로 두 개이다.
+
+### `cap.release()`란?
+`.release()`란 열어둔 비디오 파일이나 카메라를 닫는다. 정확하게 말하면 OpenCV가 잡고 있던 영상 입력 장치를 해제해주는 함수다.
+
+만약 `.release()`를 해주지 않는다면, 카메라가 계속 사용 중으로 남거나, 같은 코드 내에서 다시 카메라를 열 때 실패하거나, 환경에 따라서 데이터를 바로 삭제하거나 수정하지 못 할 수 있다.
+
+그러므로, 영상 처리가 끝나면 꼭 해제를 해주는 것이 좋다.
+
+### 영상 정보(FPS, FRAME_COUT, WIDTH, HEIGHT 등)을 가져오는 법
+`VideoCapture`는 영상 정보도 가져올 수 있다.
+
+```python
+fps = cap.get(cv2.CAP_PROP_FPS) # 초당 프레임 수
+frame_count = cap.get(cv2.CAP_PROP_FRAME_COUNT) # 전체 프레임 수
+width = cap.get(cv2.CAP_PROP_FRAME_WIDTH) # 영상 너비
+height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT) # 영상 높이
+```
 
 <a id="codec"></a>
 ## 번외, 코덱이 무엇인가?
