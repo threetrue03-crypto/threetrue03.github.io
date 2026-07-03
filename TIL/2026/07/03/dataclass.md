@@ -1,6 +1,8 @@
 # dataclass of dataclasses
-# 목차
+## 목차
 - [`dataclass란?`](#dataclass)
+- [`\_\_post\_init__(self) 란?`](#post_init)
+- [`번외, \_\_doc__`](#doc)
 
 <a id="dataclass"></a>
 ## ```dataclass```란?
@@ -16,6 +18,7 @@ class Student:
 
 위 처럼 적으면 **def \_\_init__(...)** 를 만들어놓고 **self.name = ...** 하는 것보다 간결하고 가독성이 좋다.
 
+<a id="post_init"></a>
 ## \_\_post\_init__(self) 란?
 ```dataclass```가 특별하게 알아보는 함수 이름이다.
 
@@ -34,7 +37,7 @@ class A:
     def __post_init__(self):
         print("객체 생성 완료 후 실행됨")
 ```
-
+<a id="doc"></a>
 ## 번외, \_\_doc__
 ```dataclass``` 코드 예시에서 갑자기 문자열만 적어놓은 부분이 보인다.
 ```python
