@@ -219,6 +219,13 @@ input.mp4
 그래서 리먹싱을 하는 것이다.
 
 ### `cap.read()`란?
+영상으로부터 프레임 한 장을 읽어온다.
+
+```python
+ret, frame = cap.read()
+```
+
+여기서 반환값은 ret와 frame 두 개이다.
 
 
 <a id="codec"></a>
