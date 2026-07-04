@@ -32,7 +32,7 @@
 </head>
 <body>
   <div class="progress" id="progress"></div>
-  <header class="site-header"><div class="header-inner"><a class="brand" href="{{ '/' | relative_url }}">sejin<span class="dot">.</span>dev</a><a class="back" href="{{ '/' | relative_url }}">← 모든 기록</a></div></header>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="{{ '/' | relative_url }}">sejin<span class="dot">.</span>dev</a><a class="back" href="{{ '/notes/' | relative_url }}">← 모든 기록</a></div></header>
   <header class="post-header">
     {% if page.category %}<span class="category">{{ page.category }}</span>{% endif %}
     <h1>{{ page.title }}</h1>
@@ -40,7 +40,7 @@
     <div class="meta"><time>{{ page.date | date: "%Y년 %m월 %d일" }}</time>{% if page.reading_time %}<span>·</span><span>{{ page.reading_time }}분 읽기</span>{% endif %}</div>
   </header>
   <article class="post-body">{{ content }}</article>
-  <footer class="post-footer"><span>오늘의 이해를 기록했습니다.</span><a href="{{ '/' | relative_url }}">목록으로 돌아가기 ↑</a></footer>
+  <footer class="post-footer"><span>오늘의 이해를 기록했습니다.</span><a href="{{ '/notes/' | relative_url }}">목록으로 돌아가기 ↑</a></footer>
   <script>
     const bar=document.querySelector('#progress');
     addEventListener('scroll',()=>{const total=document.documentElement.scrollHeight-innerHeight;bar.style.width=(total>0?scrollY/total*100:0)+'%';},{passive:true});
