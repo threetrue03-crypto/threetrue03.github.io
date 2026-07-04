@@ -2,7 +2,7 @@
 layout: post
 title: "dataclass"
 description: "dataclasses의 dataclass에 대해서 설명한다."
-date: 2026-07-03
+date: 2026-06-25
 category: Python
 ---
 
