@@ -1,0 +1,29 @@
+<script>
+  (()=>{let saved=null;try{saved=localStorage.getItem('sejin-theme')}catch{}const theme=saved==='dark'||saved==='light'?saved:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=theme})();
+</script>
+<style>
+  html{color-scheme:light;--paper:#f7f4ed;--surface:#fbfaf7;--ink:#242424;--muted:#6b6b6b;--line:#d9d4c9;--accent:#1a6b4b;--accent-soft:#e3eee7;--code:#202522}
+  html[data-theme="dark"]{color-scheme:dark;--paper:#141714;--surface:#1c211d;--ink:#edf2ed;--muted:#a7b0a8;--line:#343b35;--accent:#72c69b;--accent-soft:#20392c;--code:#0d1117}
+  body{color:var(--ink);background-color:var(--paper)}
+  html[data-theme="dark"] .site-header{background:rgb(20 23 20 / 92%)}
+  html[data-theme="dark"] .search-overlay{background:rgb(5 7 5 / 72%)}
+  html[data-theme="dark"] .post-body code{color:#e6edf3;background:#293029}
+  html[data-theme="dark"] .post-body pre code{background:transparent}
+  html[data-theme="dark"] .post-body tbody tr:hover{background:rgb(114 198 155 / 9%)}
+  html[data-theme="dark"] .reader-controls{background:rgb(28 33 29 / 94%);box-shadow:0 8px 28px rgb(0 0 0 / 32%)}
+  html[data-theme="dark"] .mobile-menu-panel{box-shadow:-18px 0 50px rgb(0 0 0 / 34%)}
+  html[data-theme="dark"] input::placeholder{color:#7f8981}
+  body,.site-header,.search-panel,.mobile-menu-panel,.reader-controls,.toc-details,.post-body th{transition:background-color .22s ease,color .22s ease,border-color .22s ease}
+  .theme-toggle{display:grid;width:40px;height:40px;flex:0 0 auto;padding:0;place-items:center;border:1px solid var(--line);border-radius:50%;color:var(--ink);background:transparent;font-size:17px;line-height:1;cursor:pointer;transition:background-color .2s ease,border-color .2s ease,transform .2s ease}
+  .theme-toggle:hover{background:var(--surface);transform:translateY(-1px)}
+  .theme-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .theme-moon{display:none}html[data-theme="dark"] .theme-sun{display:none}html[data-theme="dark"] .theme-moon{display:inline}
+  .drawer-theme-toggle{width:100%;height:auto;margin-top:8px;padding:17px 4px;display:flex;align-items:center;justify-content:space-between;border:0;border-bottom:1px solid var(--line);border-radius:0;color:var(--muted);font-size:17px;text-align:left}
+  .drawer-theme-toggle:hover{color:var(--accent);background:transparent;transform:none}
+  .drawer-theme-label::after{content:'낮 모드'}html[data-theme="dark"] .drawer-theme-label::after{content:'밤 모드'}
+  @media(max-width:760px){.header-theme-toggle{display:none!important}}
+  @media(prefers-reduced-motion:reduce){body,.site-header,.search-panel,.mobile-menu-panel,.reader-controls,.toc-details,.post-body th,.theme-toggle{transition:none!important}}
+</style>
+<script>
+  addEventListener('DOMContentLoaded',()=>{const root=document.documentElement;const buttons=[...document.querySelectorAll('[data-theme-toggle]')];const sync=()=>{const dark=root.dataset.theme==='dark';buttons.forEach(button=>{button.setAttribute('aria-pressed',String(dark));button.setAttribute('aria-label',dark?'낮 모드로 전환':'밤 모드로 전환');button.title=dark?'낮 모드로 전환':'밤 모드로 전환'})};const setTheme=(theme,persist=true)=>{root.dataset.theme=theme;if(persist)try{localStorage.setItem('sejin-theme',theme)}catch{}sync()};buttons.forEach(button=>button.addEventListener('click',()=>setTheme(root.dataset.theme==='dark'?'light':'dark')));sync();const media=matchMedia('(prefers-color-scheme: dark)');media.addEventListener?.('change',event=>{let saved=null;try{saved=localStorage.getItem('sejin-theme')}catch{}if(!saved)setTheme(event.matches?'dark':'light',false)})});
+</script>
