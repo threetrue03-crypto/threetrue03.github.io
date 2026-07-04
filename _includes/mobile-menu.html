@@ -20,9 +20,9 @@
     </div>
     <nav class="mobile-menu-nav" aria-label="모바일 주요 메뉴">
       <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
-      <a href="{{ '/notes/' | relative_url }}"{% if page.url contains '/notes/' or page.layout == 'post' %} aria-current="page"{% endif %}>Notes</a>
-      <a href="{{ '/news/' | relative_url }}"{% if page.url contains '/news/' %} aria-current="page"{% endif %}>News</a>
-      <a href="{{ '/papers/' | relative_url }}"{% if page.url contains '/papers/' %} aria-current="page"{% endif %}>Papers</a>
+      <a href="{{ '/notes/' | relative_url }}"{% if page.url contains '/notes/' or page.type == 'note' %} aria-current="page"{% endif %}>Notes</a>
+      <a href="{{ '/news/' | relative_url }}"{% if page.url contains '/news/' or page.type == 'news' %} aria-current="page"{% endif %}>News</a>
+      <a href="{{ '/papers/' | relative_url }}"{% if page.url contains '/papers/' or page.type == 'paper' %} aria-current="page"{% endif %}>Papers</a>
       <a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about/' %} aria-current="page"{% endif %}>About</a>
       <a class="external" href="https://github.com/threetrue03-crypto" target="_blank" rel="noreferrer">GitHub</a>
     </nav>

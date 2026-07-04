@@ -36,6 +36,7 @@ permalink: /notes/
   </style>
 </head>
 <body>
+  {% assign note_posts = site.posts | where: "type", "note" %}
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="{{ '/' | relative_url }}">sejin<span class="dot">.</span><span class="dev">dev</span></a>
@@ -53,7 +54,7 @@ permalink: /notes/
   <section class="page-head">
     <div class="page-head-inner">
       <div><h1>Notes</h1><p class="intro">배우고 해결한 내용을 다시 찾기 쉽게 모았습니다.</p></div>
-      <span class="count">{{ site.posts | size }} notes</span>
+      <span class="count">{{ note_posts | size }} notes</span>
     </div>
   </section>
 
@@ -74,16 +75,17 @@ permalink: /notes/
         <section class="filter-section">
           <h2 class="filter-title">Topics</h2>
           <div class="filter-list">
-            <button class="filter-button active" type="button" data-topic="all"><span>전체</span><span class="filter-count">{{ site.posts | size }}</span></button>
-            {% for category in site.categories %}
-              <button class="filter-button" type="button" data-topic="{{ category[0] | downcase | escape }}"><span>{{ category[0] }}</span><span class="filter-count">{{ category[1] | size }}</span></button>
+            <button class="filter-button active" type="button" data-topic="all"><span>전체</span><span class="filter-count">{{ note_posts | size }}</span></button>
+            {% assign note_groups = note_posts | group_by: "category" %}
+            {% for category in note_groups %}
+              {% if category.name != "" %}<button class="filter-button" type="button" data-topic="{{ category.name | downcase | escape }}"><span>{{ category.name }}</span><span class="filter-count">{{ category.items | size }}</span></button>{% endif %}
             {% endfor %}
           </div>
         </section>
         <section class="filter-section">
           <h2 class="filter-title">Archive</h2>
           <div class="filter-list">
-            {% assign months = site.posts | group_by_exp: "post", "post.date | date: '%Y년 %m월'" %}
+            {% assign months = note_posts | group_by_exp: "post", "post.date | date: '%Y년 %m월'" %}
             {% for month in months %}
               {% assign first_post = month.items | first %}
               <button class="filter-button" type="button" data-month="{{ first_post.date | date: '%Y-%m' }}"><span>{{ month.name }}</span><span class="filter-count">{{ month.items | size }}</span></button>
@@ -94,7 +96,7 @@ permalink: /notes/
 
       <section aria-label="전체 노트">
         <div class="post-list" id="noteList">
-          {% for post in site.posts %}
+          {% for post in note_posts %}
             {% capture topics %}{{ post.category }} {{ post.categories | join: ' ' }} {{ post.tags | join: ' ' }}{% endcapture %}
             <a class="post" href="{{ post.url | relative_url }}" data-topic="{{ topics | downcase | escape }}" data-month="{{ post.date | date: '%Y-%m' }}" data-date="{{ post.date | date: '%s' }}">
               <div class="post-meta"><time>{{ post.date | date: "%Y. %m. %d" }}</time>{% if post.reading_time %}<span>·</span><span>{{ post.reading_time }}분</span>{% endif %}</div>

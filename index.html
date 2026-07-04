@@ -396,6 +396,9 @@
   </style>
 </head>
 <body>
+  {% assign news_posts = site.posts | where: "type", "news" %}
+  {% assign paper_posts = site.posts | where: "type", "paper" %}
+  {% assign note_posts = site.posts | where: "type", "note" %}
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="{{ '/' | relative_url }}" aria-label="sejin.dev 홈">sejin<span class="brand-dot">.</span><span class="brand-dev">dev</span></a>
@@ -421,7 +424,7 @@
       <header class="briefing-header">
         <div>
           <h1 class="briefing-title" id="briefing-title">기술 브리핑</h1>
-          <p class="briefing-updated">{{ site.data.briefing.updated_at | default: "매일 새로운 자료를 선별합니다" }}</p>
+          <p class="briefing-updated">직접 읽고 정리한 뉴스와 논문입니다.</p>
         </div>
         <div class="briefing-tabs" role="tablist" aria-label="브리핑 종류">
           <button class="briefing-tab active" type="button" role="tab" aria-selected="true" data-briefing-target="news">News</button>
@@ -431,26 +434,26 @@
 
       <div class="briefing-panel" data-briefing-panel="news">
         <div class="briefing-grid">
-          {% for item in site.data.briefing.news limit: 3 %}
-            <a class="briefing-story{% if forloop.first %} featured{% endif %}" href="{{ item.url }}" target="_blank" rel="noreferrer">
-              <div><div class="briefing-label"><span>{{ item.topic }}</span><time>{{ item.published }}</time></div><h2>{{ item.title }}</h2><p class="briefing-summary">{{ item.summary }}</p></div>
-              <div class="briefing-source"><span>{{ item.source }}</span><span>원문 ↗</span></div>
+          {% for item in news_posts limit: 3 %}
+            <a class="briefing-story{% if forloop.first %} featured{% endif %}" href="{{ item.url | relative_url }}">
+              <div><div class="briefing-label"><span>{{ item.category | default: "News" }}</span><time>{{ item.date | date: "%Y.%m.%d" }}</time></div><h2>{{ item.title }}</h2><p class="briefing-summary">{{ item.description | default: item.excerpt | strip_html | strip_newlines | truncate: 150 }}</p></div>
+              <div class="briefing-source"><span>{{ item.source | default: "sejin.dev" }}</span><span>기록 읽기 →</span></div>
             </a>
           {% else %}
-            <div class="briefing-story featured"><div><div class="briefing-label"><span>Physical AI</span><time>Preparing</time></div><h2>관심 분야의 최신 기술 뉴스를 준비하고 있습니다</h2><p class="briefing-summary">Physical AI, 컴퓨터구조, 컴퓨터비전, 머신러닝 소식을 매일 선별합니다.</p></div><div class="briefing-source"><span>sejin.dev briefing</span></div></div>
+            <div class="briefing-story featured"><div><div class="briefing-label"><span>News</span></div><h2>아직 정리한 뉴스가 없습니다</h2><p class="briefing-summary">_posts/news에 Markdown 기록을 추가하면 이곳에 표시됩니다.</p></div><div class="briefing-source"><span>sejin.dev</span></div></div>
           {% endfor %}
         </div>
       </div>
 
       <div class="briefing-panel" data-briefing-panel="papers" hidden>
         <div class="briefing-grid">
-          {% for item in site.data.briefing.papers limit: 3 %}
-            <a class="briefing-story{% if forloop.first %} featured{% endif %}" href="{{ item.url }}" target="_blank" rel="noreferrer">
-              <div><div class="briefing-label"><span>{{ item.topic }}</span><time>{{ item.published }}</time></div><h2>{{ item.title }}</h2><p class="briefing-summary">{{ item.summary }}</p></div>
-              <div class="briefing-source"><span>{{ item.source }}</span><span>논문 ↗</span></div>
+          {% for item in paper_posts limit: 3 %}
+            <a class="briefing-story{% if forloop.first %} featured{% endif %}" href="{{ item.url | relative_url }}">
+              <div><div class="briefing-label"><span>{{ item.category | default: "Paper" }}</span><time>{{ item.date | date: "%Y.%m.%d" }}</time></div><h2>{{ item.title }}</h2><p class="briefing-summary">{{ item.description | default: item.excerpt | strip_html | strip_newlines | truncate: 150 }}</p></div>
+              <div class="briefing-source"><span>{{ item.source | default: "Paper note" }}</span><span>기록 읽기 →</span></div>
             </a>
           {% else %}
-            <div class="briefing-story featured"><div><div class="briefing-label"><span>Research</span><time>Preparing</time></div><h2>관심 분야의 최신 논문을 준비하고 있습니다</h2><p class="briefing-summary">arXiv와 Semantic Scholar에서 관련 연구를 선별합니다.</p></div><div class="briefing-source"><span>sejin.dev briefing</span></div></div>
+            <div class="briefing-story featured"><div><div class="briefing-label"><span>Papers</span></div><h2>아직 정리한 논문이 없습니다</h2><p class="briefing-summary">_posts/papers에 Markdown 기록을 추가하면 이곳에 표시됩니다.</p></div><div class="briefing-source"><span>sejin.dev</span></div></div>
           {% endfor %}
         </div>
       </div>
@@ -463,7 +466,7 @@
       <p class="section-note">새로 정리한 순서대로 보여드려요.</p>
 
       <div class="post-list" id="postList">
-        {% for post in site.posts %}
+        {% for post in note_posts %}
           {% capture searchable_topics %}{{ post.category }} {{ post.categories | join: ' ' }} {{ post.tags | join: ' ' }}{% endcapture %}
           <article class="post" data-topics="{{ searchable_topics | downcase | escape }}" data-month="{{ post.date | date: '%Y-%m' }}">
             <a href="{{ post.url | relative_url }}" aria-label="{{ post.title | escape }}">
@@ -494,8 +497,9 @@
         <h2 class="sidebar-title">Topics</h2>
         <div class="topic-list">
           <button class="topic-button active" type="button" data-filter="all">전체</button>
-          {% for category in site.categories %}
-            <button class="topic-button" type="button" data-filter="{{ category[0] | downcase | escape }}">{{ category[0] }}</button>
+          {% assign note_groups = note_posts | group_by: "category" %}
+          {% for category in note_groups %}
+            {% if category.name != "" %}<button class="topic-button" type="button" data-filter="{{ category.name | downcase | escape }}">{{ category.name }}</button>{% endif %}
           {% endfor %}
         </div>
       </section>
@@ -503,7 +507,7 @@
       <section class="sidebar-section" id="archive">
         <h2 class="sidebar-title">Archive</h2>
         <div class="archive">
-          {% assign posts_by_month = site.posts | group_by_exp: "post", "post.date | date: '%Y년 %m월'" %}
+          {% assign posts_by_month = note_posts | group_by_exp: "post", "post.date | date: '%Y년 %m월'" %}
           {% for month in posts_by_month %}
             {% assign first_post = month.items | first %}
             <button class="archive-button" type="button" data-month="{{ first_post.date | date: '%Y-%m' }}"><span>{{ month.name }}</span><span>{{ month.items | size }}</span></button>
