@@ -1,41 +1,39 @@
-updated_at: "API 연동 전 시안 데이터"
-
+updated_at: 2026.07.04 13:12 KST 갱신
 news:
-  - topic: "Physical AI"
-    published: "Preview"
-    title: "로봇이 보고, 이해하고, 행동하는 Physical AI의 다음 단계"
-    summary: "범용 로봇을 위한 비전·언어·행동 모델의 흐름과 최근 연구 소식을 이곳에서 모아봅니다."
-    source: "News briefing"
-    url: "https://news.ycombinator.com/"
-  - topic: "Architecture"
-    published: "Preview"
-    title: "AI 가속기의 경쟁 중심이 연산에서 메모리로"
-    summary: "GPU, NPU, 메모리 계층과 컴퓨터구조 관련 뉴스를 선별합니다."
-    source: "Tech news"
-    url: "https://news.ycombinator.com/"
-  - topic: "Computer Vision"
-    published: "Preview"
-    title: "더 긴 장면을 기억하는 비디오 이해 모델"
-    summary: "컴퓨터비전과 머신러닝의 최신 발표를 짧게 정리합니다."
-    source: "Research news"
-    url: "https://news.ycombinator.com/"
-
+- topic: Machine Learning
+  published: 2026.07.02
+  title: Is One Layer Enough? A Single Transformer Layer Matches Full-Parameter RL Train
+  summary: Hacker News에서 150개의 추천과 42개의 댓글을 받은 Machine Learning 관련 소식입니다.
+  source: arxiv.org
+  url: https://arxiv.org/abs/2607.01232
+- topic: Architecture
+  published: 2026.07.02
+  title: Reduce GVisor Cold Starts with GPU Snapshotting
+  summary: Hacker News에서 51개의 추천과 17개의 댓글을 받은 Architecture 관련 소식입니다.
+  source: cerebrium.ai
+  url: https://cerebrium.ai/blog/reducing-gpu-cold-starts-with-memory-snapshots-restoring-cuda-workloads-in-second
+- topic: Machine Learning
+  published: 2026.07.01
+  title: 'TabFM: A zero-shot foundation model for tabular data'
+  summary: Hacker News에서 93개의 추천과 14개의 댓글을 받은 Machine Learning 관련 소식입니다.
+  source: research.google
+  url: https://research.google/blog/introducing-tabfm-a-zero-shot-foundation-model-for-tabular-data/
 papers:
-  - topic: "Embodied AI"
-    published: "Preview"
-    title: "Physical Foundation Model 관련 최신 논문이 표시되는 자리"
-    summary: "논문 제목과 초록을 바탕으로 핵심 내용을 두세 줄로 보여줍니다."
-    source: "Semantic Scholar"
-    url: "https://www.semanticscholar.org/"
-  - topic: "cs.AR"
-    published: "Preview"
-    title: "컴퓨터구조와 AI 하드웨어 최신 연구"
-    summary: "가속기, 메모리, RISC-V 관련 논문을 선별합니다."
-    source: "arXiv"
-    url: "https://arxiv.org/"
-  - topic: "cs.CV · cs.LG"
-    published: "Preview"
-    title: "컴퓨터비전과 머신러닝 최신 논문"
-    summary: "최근 공개된 논문 중 관심 키워드와 가까운 자료를 보여줍니다."
-    source: "arXiv"
-    url: "https://arxiv.org/"
+- topic: Embodied AI
+  published: Preview
+  title: Physical Foundation Model 관련 최신 논문이 표시되는 자리
+  summary: 논문 제목과 초록을 바탕으로 핵심 내용을 두세 줄로 보여줍니다.
+  source: Semantic Scholar
+  url: https://www.semanticscholar.org/
+- topic: cs.AR
+  published: Preview
+  title: 컴퓨터구조와 AI 하드웨어 최신 연구
+  summary: 가속기, 메모리, RISC-V 관련 논문을 선별합니다.
+  source: arXiv
+  url: https://arxiv.org/
+- topic: cs.CV · cs.LG
+  published: Preview
+  title: 컴퓨터비전과 머신러닝 최신 논문
+  summary: 최근 공개된 논문 중 관심 키워드와 가까운 자료를 보여줍니다.
+  source: arXiv
+  url: https://arxiv.org/
