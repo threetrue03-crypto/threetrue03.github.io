@@ -222,8 +222,8 @@
       width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 280px;
-      gap: 70px;
+      grid-template-columns: minmax(0, 860px);
+      justify-content: center;
       padding: 58px 0 100px;
     }
 
@@ -328,37 +328,6 @@
       border-left: 1px solid #31485f; border-right: 1px solid #31485f; transform: skew(-25deg);
     }
 
-    .sidebar { padding-top: 5px; }
-    .sidebar-section { padding: 0 0 30px; margin-bottom: 30px; border-bottom: 1px solid var(--line); }
-    .sidebar-title { margin: 0 0 18px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
-
-    .topic-list { display: flex; flex-wrap: wrap; gap: 8px; }
-    .topic-button {
-      padding: 9px 12px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: transparent;
-      color: var(--muted);
-      font-size: 12px;
-      cursor: pointer;
-      transition: all .2s ease;
-    }
-    .topic-button:hover, .topic-button.active { color: var(--paper); background: var(--ink); border-color: var(--ink); }
-
-    .archive { display: grid; gap: 14px; }
-    .archive-button {
-      width: 100%;
-      padding: 0;
-      border: 0;
-      display: flex;
-      justify-content: space-between;
-      color: var(--muted);
-      background: transparent;
-      font-size: 13px;
-      cursor: pointer;
-    }
-    .archive-button:hover, .archive-button.active { color: var(--ink); }
-
     .empty-message { display: none; padding: 48px 0; color: var(--muted); text-align: center; border-bottom: 1px solid var(--line); }
     .empty-message.visible { display: block; }
 
@@ -405,8 +374,6 @@
       .briefing-grid { grid-template-columns: 1fr 1fr; }
       .briefing-story.featured { grid-column: 1 / -1; border-right: 0; border-bottom: 1px solid var(--line); }
       main { grid-template-columns: 1fr; gap: 55px; }
-      .sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-      .sidebar-section { margin: 0; }
     }
 
     @media (max-width: 640px) {
@@ -429,7 +396,6 @@
       .visual-chain::after { width: 44px; height: 44px; left: 39px; top: 25px; }
       .post-title { font-size: 20px; }
       .post-excerpt { -webkit-line-clamp: 2; font-size: 14px; }
-      .sidebar { grid-template-columns: 1fr; }
       .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; }
     }
 
@@ -444,8 +410,6 @@
       <a class="brand" href="#top" aria-label="sejin.dev 홈">sejin<span class="brand-dot">.</span>dev</a>
       <nav class="nav" aria-label="주요 메뉴">
         <a href="{{ '/notes/' | relative_url }}">Notes</a>
-        <a href="#topics">Topics</a>
-        <a href="#archive">Archive</a>
         <a href="#about">About</a>
       </nav>
       <button class="icon-button" id="searchButton" type="button" aria-label="글 검색" title="검색 (Ctrl/⌘ + K)">
@@ -540,29 +504,6 @@
       <div class="empty-message" id="emptyMessage">해당 주제의 기록이 아직 없습니다.</div>
     </section>
 
-    <aside class="sidebar" aria-label="블로그 탐색">
-      <section class="sidebar-section" id="topics">
-        <h2 class="sidebar-title">Topics</h2>
-        <div class="topic-list">
-          <button class="topic-button active" type="button" data-filter="all">전체</button>
-          {% for category in site.categories %}
-            <button class="topic-button" type="button" data-filter="{{ category[0] | downcase | escape }}">{{ category[0] }}</button>
-          {% endfor %}
-        </div>
-      </section>
-
-      <section class="sidebar-section" id="archive">
-        <h2 class="sidebar-title">Archive</h2>
-        <div class="archive">
-          {% assign posts_by_month = site.posts | group_by_exp: "post", "post.date | date: '%Y년 %m월'" %}
-          {% for month in posts_by_month %}
-            {% assign first_post = month.items | first %}
-            <button class="archive-button" type="button" data-month="{{ first_post.date | date: '%Y-%m' }}"><span>{{ month.name }}</span><span>{{ month.items | size }}</span></button>
-          {% endfor %}
-        </div>
-      </section>
-
-    </aside>
   </main>
 
   <footer id="about">
@@ -647,38 +588,6 @@
       if (event.key === 'Escape') hideSearch();
     });
 
-    document.querySelectorAll('.topic-button').forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('.topic-button').forEach(item => item.classList.remove('active'));
-        document.querySelectorAll('.archive-button').forEach(item => item.classList.remove('active'));
-        button.classList.add('active');
-        const filter = button.dataset.filter;
-        let visible = 0;
-        posts.forEach(post => {
-          const matches = filter === 'all' || post.dataset.topics.includes(filter);
-          post.hidden = !matches;
-          if (matches) visible += 1;
-        });
-        emptyMessage.classList.toggle('visible', visible === 0);
-      });
-    });
-
-    document.querySelectorAll('.archive-button').forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('.archive-button').forEach(item => item.classList.remove('active'));
-        document.querySelectorAll('.topic-button').forEach(item => item.classList.remove('active'));
-        button.classList.add('active');
-        const month = button.dataset.month;
-        let visible = 0;
-        posts.forEach(post => {
-          const matches = post.dataset.month === month;
-          post.hidden = !matches;
-          if (matches) visible += 1;
-        });
-        emptyMessage.classList.toggle('visible', visible === 0);
-        document.querySelector('#posts').scrollIntoView();
-      });
-    });
   </script>
 </body>
 </html>
