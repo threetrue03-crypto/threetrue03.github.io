@@ -1,0 +1,31 @@
+---
+title: About
+permalink: /about/
+---
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="sejin.dev와 관심 기술 분야 소개">
+  <title>About — {{ site.title }}</title>
+  <style>
+    :root{--paper:#f7f4ed;--surface:#fbfaf7;--ink:#242424;--muted:#6b6b6b;--line:#d9d4c9;--accent:#1a6b4b;--accent-soft:#e3eee7;--serif:Georgia,"Noto Serif KR","Nanum Myeongjo",serif;--sans:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    *{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.site-header{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line);background:rgb(247 244 237 / 92%);backdrop-filter:blur(14px)}.header-inner{width:min(1180px,calc(100% - 40px));height:72px;margin:auto;display:flex;align-items:center;gap:28px}.brand{font-family:var(--serif);font-size:23px;font-weight:700;letter-spacing:-.7px}.dot,.dev{color:var(--accent)}.nav{display:flex;align-items:center;gap:28px;margin-left:auto;font-size:14px}.nav a{color:var(--muted)}.nav a:hover,.nav a[aria-current="page"]{color:var(--ink)}
+    main{width:min(900px,calc(100% - 40px));margin:auto;padding:88px 0 110px}.eyebrow{margin:0 0 20px;color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}h1{max-width:760px;margin:0;font-family:var(--serif);font-size:clamp(48px,7vw,76px);font-weight:500;line-height:1.15;letter-spacing:-3px;word-break:keep-all}.lead{max-width:720px;margin:32px 0 72px;color:var(--muted);font-size:19px;line-height:1.8;word-break:keep-all}.section{display:grid;grid-template-columns:180px minmax(0,1fr);gap:44px;padding:38px 0;border-top:1px solid var(--line)}.section h2{margin:0;font-size:12px;letter-spacing:.1em;text-transform:uppercase}.section p{margin:0;color:var(--muted);font-size:16px;line-height:1.8}.interests{display:flex;flex-wrap:wrap;gap:10px}.interest{padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:13px}.channels{display:grid;gap:14px}.channel{display:flex;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid var(--line);color:var(--muted);font-size:14px}.channel:hover{color:var(--accent)}footer{border-top:1px solid var(--line)}.footer-inner{width:min(1180px,calc(100% - 40px));min-height:100px;margin:auto;display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px}
+    @media(max-width:700px){.header-inner,main,.footer-inner{width:calc(100% - 32px)}.header-inner{height:64px}.nav{gap:16px}.nav a:nth-child(2),.nav a:nth-child(3),.nav a:nth-child(5){display:none}main{padding:58px 0 80px}h1{font-size:48px;letter-spacing:-2px}.lead{font-size:17px;margin-bottom:52px}.section{grid-template-columns:1fr;gap:20px}.footer-inner{align-items:flex-start;justify-content:center;flex-direction:column;gap:8px}}
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="{{ '/' | relative_url }}">sejin<span class="dot">.</span><span class="dev">dev</span></a><nav class="nav" aria-label="주요 메뉴"><a href="{{ '/notes/' | relative_url }}">Notes</a><a href="{{ '/news/' | relative_url }}">News</a><a href="{{ '/papers/' | relative_url }}">Papers</a><a href="{{ '/about/' | relative_url }}" aria-current="page">About</a><a href="https://github.com/threetrue03-crypto" target="_blank" rel="noreferrer">GitHub</a></nav></div></header>
+  <main>
+    <p class="eyebrow">About sejin.dev</p>
+    <h1>배우고 만든 것을 오래 남기는 기술 기록입니다.</h1>
+    <p class="lead">공부하며 이해한 내용과 개발 중 해결한 문제를 기록합니다. 관심 분야의 새로운 뉴스와 논문도 함께 모아, 다시 찾아볼 수 있는 개인 지식 저장소를 만들어가고 있습니다.</p>
+    <section class="section"><h2>Interests</h2><div class="interests"><span class="interest">Physical AI</span><span class="interest">Computer Architecture</span><span class="interest">Computer Vision</span><span class="interest">Machine Learning</span></div></section>
+    <section class="section"><h2>This site</h2><p><strong>Notes</strong>에는 직접 공부하고 정리한 글을, <strong>News</strong>와 <strong>Papers</strong>에는 관심 분야에서 새로 공개된 자료를 모읍니다.</p></section>
+    <section class="section"><h2>Links</h2><div class="channels"><a class="channel" href="https://github.com/threetrue03-crypto" target="_blank" rel="noreferrer"><span>GitHub</span><span>threetrue03-crypto ↗</span></a></div></section>
+  </main>
+  <footer><div class="footer-inner"><span>© 2026 sejin.dev</span><a href="{{ '/' | relative_url }}">홈으로 돌아가기 ↑</a></div></footer>
+</body>
+</html>

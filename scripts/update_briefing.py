@@ -70,7 +70,7 @@ def classify(text: str) -> tuple[str, int]:
     return topic, score
 
 
-def diversify(items: list[dict], limit: int = 3) -> list[dict]:
+def diversify(items: list[dict], limit: int = 12) -> list[dict]:
     selected: list[dict] = []
     used_topics: set[str] = set()
     for item in items:
@@ -149,6 +149,15 @@ def fetch_papers() -> list[dict]:
         if relevance == 0:
             continue
         url = entry.findtext("atom:id", default="", namespaces=namespace)
+        authors = ", ".join(
+            normalize(author.findtext("atom:name", default="", namespaces=namespace))
+            for author in entry.findall("atom:author", namespace)
+        )
+        pdf_url = ""
+        for link in entry.findall("atom:link", namespace):
+            if link.attrib.get("title") == "pdf" or link.attrib.get("type") == "application/pdf":
+                pdf_url = link.attrib.get("href", "")
+                break
         items.append({
             "topic": topic,
             "published": published.strftime("%Y.%m.%d"),
@@ -156,6 +165,8 @@ def fetch_papers() -> list[dict]:
             "summary": summary[:260].rstrip() + ("…" if len(summary) > 260 else ""),
             "source": "arXiv",
             "url": url,
+            "authors": authors,
+            "pdf_url": pdf_url,
             "_rank": relevance * 1000 + int(published.timestamp() / 86400),
         })
     items.sort(key=lambda item: item["_rank"], reverse=True)
@@ -169,6 +180,31 @@ def load_current() -> dict:
     if not OUTPUT.exists():
         return {}
     return yaml.safe_load(OUTPUT.read_text(encoding="utf-8")) or {}
+
+
+def merge_items(fresh: list[dict], stored: list[dict], retention_days: int, limit: int = 100) -> list[dict]:
+    """Merge newest results into stored history, de-duplicate URLs, and trim old entries."""
+    if not fresh:
+        return stored[:limit]
+
+    cutoff = (NOW - dt.timedelta(days=retention_days)).date()
+    merged = []
+    seen_urls = set()
+    for item in fresh + stored:
+        url = item.get("url", "")
+        if not url or url in seen_urls or item.get("published") == "Preview":
+            continue
+        try:
+            published = dt.datetime.strptime(item.get("published", ""), "%Y.%m.%d").date()
+        except ValueError:
+            continue
+        if published < cutoff:
+            continue
+        seen_urls.add(url)
+        merged.append(item)
+
+    merged.sort(key=lambda item: item.get("published", ""), reverse=True)
+    return merged[:limit]
 
 
 def main() -> None:
@@ -187,8 +223,8 @@ def main() -> None:
 
     data = {
         "updated_at": NOW.strftime("%Y.%m.%d %H:%M KST 갱신"),
-        "news": news or current.get("news", []),
-        "papers": papers or current.get("papers", []),
+        "news": merge_items(news, current.get("news", []), retention_days=30),
+        "papers": merge_items(papers, current.get("papers", []), retention_days=90),
     }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(yaml.safe_dump(data, allow_unicode=True, sort_keys=False, width=1000), encoding="utf-8")
