@@ -19,7 +19,7 @@
 </head>
 <body>
   {% assign items = site.data.briefing[page.feed_key] %}
-  <header class="site-header"><div class="header-inner"><a class="brand" href="{{ '/' | relative_url }}">sejin<span class="dot">.</span><span class="dev">dev</span></a><nav class="nav" aria-label="주요 메뉴"><a href="{{ '/notes/' | relative_url }}">Notes</a><a href="{{ '/news/' | relative_url }}"{% if page.feed_key == 'news' %} aria-current="page"{% endif %}>News</a><a href="{{ '/papers/' | relative_url }}"{% if page.feed_key == 'papers' %} aria-current="page"{% endif %}>Papers</a><a href="{{ '/about/' | relative_url }}">About</a><a href="https://github.com/threetrue03-crypto" target="_blank" rel="noreferrer">GitHub</a></nav></div></header>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="{{ '/' | relative_url }}">sejin<span class="dot">.</span><span class="dev">dev</span></a><nav class="nav" aria-label="주요 메뉴"><a href="{{ '/notes/' | relative_url }}">Notes</a><a href="{{ '/news/' | relative_url }}"{% if page.feed_key == 'news' %} aria-current="page"{% endif %}>News</a><a href="{{ '/papers/' | relative_url }}"{% if page.feed_key == 'papers' %} aria-current="page"{% endif %}>Papers</a><a href="{{ '/about/' | relative_url }}">About</a><a href="https://github.com/threetrue03-crypto" target="_blank" rel="noreferrer">GitHub</a></nav><button class="mobile-menu-button" type="button" aria-label="메뉴 열기" aria-controls="mobileMenu" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button></div></header>
   <section class="page-head"><div class="page-head-inner"><div><h1>{{ page.title }}</h1><p class="intro">{{ page.description }}</p></div><span class="updated">{{ site.data.briefing.updated_at }}</span></div></section>
   <main>
     <div class="toolbar"><label class="search-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><span hidden>{{ page.title }} 검색</span><input class="search" id="feedSearch" type="search" placeholder="제목과 요약 검색" autocomplete="off"></label><div class="sort"><button class="sort-button active" type="button" data-sort="newest">최신순</button><button class="sort-button" type="button" data-sort="oldest">오래된순</button></div></div>
@@ -35,6 +35,7 @@
     <div class="empty" id="emptyResult">조건에 맞는 자료가 없습니다.</div>
   </main>
   <footer><div class="footer-inner"><span>© 2026 sejin.dev</span><a href="{{ '/' | relative_url }}">홈으로 돌아가기 ↑</a></div></footer>
+  {% include mobile-menu.html %}
   <script>
     const list=document.querySelector('#feedList');const entries=[...document.querySelectorAll('.item')];const search=document.querySelector('#feedSearch');const empty=document.querySelector('#emptyResult');let selectedTopic='all';
     function filter(){const query=search.value.trim().toLowerCase();let visible=0;entries.forEach(entry=>{const show=(!query||entry.textContent.toLowerCase().includes(query))&&(selectedTopic==='all'||entry.dataset.topic===selectedTopic);entry.hidden=!show;if(show)visible+=1});empty.classList.toggle('visible',visible===0)}
