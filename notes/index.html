@@ -19,7 +19,7 @@ permalink: /notes/
     }
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input{font:inherit}button{color:inherit}
     .site-header{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line);background:rgb(247 244 237 / 92%);backdrop-filter:blur(14px)}
-    .header-inner{width:min(1180px,calc(100% - 40px));height:72px;margin:auto;display:flex;align-items:center;gap:28px}.brand{font-family:var(--serif);font-size:23px;font-weight:700;letter-spacing:-.7px}.dot{color:var(--accent)}
+    .header-inner{width:min(1180px,calc(100% - 40px));height:72px;margin:auto;display:flex;align-items:center;gap:28px}.brand{font-family:var(--serif);font-size:23px;font-weight:700;letter-spacing:-.7px}.dot,.dev{color:var(--accent)}
     .nav{display:flex;align-items:center;gap:28px;margin-left:auto;font-size:14px}.nav a{color:var(--muted)}.nav a:hover,.nav a[aria-current="page"]{color:var(--ink)}
     .page-head{border-bottom:1px solid var(--line)}.page-head-inner{width:min(1180px,calc(100% - 40px));margin:auto;padding:70px 0 54px;display:flex;align-items:end;justify-content:space-between;gap:30px}
     h1{margin:0;font-family:var(--serif);font-size:clamp(52px,7vw,86px);font-weight:500;letter-spacing:-4px;line-height:1}.intro{margin:20px 0 0;color:var(--muted);font-size:16px}.count{color:var(--muted);font-family:var(--mono);font-size:12px}
@@ -37,7 +37,7 @@ permalink: /notes/
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="{{ '/' | relative_url }}">sejin<span class="dot">.</span>dev</a>
+      <a class="brand" href="{{ '/' | relative_url }}">sejin<span class="dot">.</span><span class="dev">dev</span></a>
       <nav class="nav" aria-label="주요 메뉴">
         <a href="{{ '/notes/' | relative_url }}" aria-current="page">Notes</a>
         <a href="{{ '/#about' | relative_url }}">About</a>
