@@ -379,10 +379,14 @@
       .briefing-story:last-child { border-bottom: 0; }
       .briefing-story.featured h2 { font-size: 27px; }
       main { padding-top: 42px; }
+      main { display: flex; flex-direction: column; gap: 0; }
+      .sidebar { display: contents; }
+      #topics { order: 1; margin: 0 0 34px; padding: 0 0 28px; border-bottom: 1px solid var(--line); }
+      #posts { order: 2; }
+      #archive { order: 3; margin: 42px 0 0; padding: 0 0 28px; }
       .post { padding: 26px 0; }
       .post-title { font-size: 20px; }
       .post-excerpt { -webkit-line-clamp: 2; font-size: 14px; }
-      .sidebar { grid-template-columns: 1fr; }
       .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; }
     }
 

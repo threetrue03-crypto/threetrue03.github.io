@@ -184,9 +184,6 @@ def load_current() -> dict:
 
 def merge_items(fresh: list[dict], stored: list[dict], retention_days: int, limit: int = 100) -> list[dict]:
     """Merge newest results into stored history, de-duplicate URLs, and trim old entries."""
-    if not fresh:
-        return stored[:limit]
-
     cutoff = (NOW - dt.timedelta(days=retention_days)).date()
     merged = []
     seen_urls = set()
