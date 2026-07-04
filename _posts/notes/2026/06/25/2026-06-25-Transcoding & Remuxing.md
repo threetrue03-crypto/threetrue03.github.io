@@ -3,7 +3,7 @@ layout: post
 type: note
 title: "Transcoding & Remuxing"
 description: "컨테이너와 코덱의 호환성을 해결하기 위한 두 가지 방법을 소개한다."
-date: 2026-07-03
+date: 2026-06-25
 category: FFmpeg
 ---
 
