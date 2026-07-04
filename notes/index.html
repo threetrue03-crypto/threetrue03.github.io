@@ -36,7 +36,7 @@ permalink: /notes/
   </style>
 </head>
 <body>
-  {% assign note_posts = site.posts | where_exp: "post", "post.type == 'note' or post.path contains '_posts/notes/'" %}
+  {% assign note_posts = site.posts | where: "type", "note" %}
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="{{ '/' | relative_url }}">sejin<span class="dot">.</span><span class="dev">dev</span></a>

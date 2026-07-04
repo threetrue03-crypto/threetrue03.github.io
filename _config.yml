@@ -2,3 +2,19 @@ title: sejin.dev
 description: 조세진의 기술 블로그
 markdown: kramdown
 permalink: /posts/:title/
+defaults:
+  - scope:
+      path: "_posts/notes"
+      type: "posts"
+    values:
+      type: note
+  - scope:
+      path: "_posts/news"
+      type: "posts"
+    values:
+      type: news
+  - scope:
+      path: "_posts/papers"
+      type: "posts"
+    values:
+      type: paper
