@@ -396,9 +396,9 @@
   </style>
 </head>
 <body>
-  {% assign news_posts = site.posts | where: "type", "news" %}
-  {% assign paper_posts = site.posts | where: "type", "paper" %}
-  {% assign note_posts = site.posts | where: "type", "note" %}
+  {% assign news_posts = site.posts | where_exp: "post", "post.type == 'news' or post.path contains '_posts/news/'" %}
+  {% assign paper_posts = site.posts | where_exp: "post", "post.type == 'paper' or post.path contains '_posts/papers/'" %}
+  {% assign note_posts = site.posts | where_exp: "post", "post.type == 'note' or post.path contains '_posts/notes/'" %}
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="{{ '/' | relative_url }}" aria-label="sejin.dev 홈">sejin<span class="brand-dot">.</span><span class="brand-dev">dev</span></a>
