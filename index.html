@@ -241,9 +241,6 @@
     .post-list { border-top: 1px solid var(--ink); }
 
     .post {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 180px;
-      gap: 34px;
       padding: 32px 0;
       border-bottom: 1px solid var(--line);
       transition: opacity .2s ease;
@@ -286,48 +283,6 @@
     .tags { display: flex; flex-wrap: wrap; gap: 7px; }
     .tag { color: var(--muted); font-family: var(--mono); font-size: 11px; }
     .tag::before { content: "#"; color: var(--accent); }
-
-    .post-visual {
-      min-height: 128px;
-      align-self: center;
-      position: relative;
-      overflow: hidden;
-      border-radius: 2px;
-      background: var(--visual-bg, #dce8df);
-    }
-
-    .post-visual::before,
-    .post-visual::after { content: ""; position: absolute; }
-
-    .visual-chain::before {
-      width: 70px; height: 70px; border: 2px solid #295943; border-radius: 50%;
-      left: 27px; top: 28px;
-    }
-    .visual-chain::after {
-      width: 70px; height: 70px; border: 2px solid #295943; border-radius: 50%;
-      left: 82px; top: 28px;
-    }
-
-    .visual-code { --visual-bg: #e4ddd0; }
-    .visual-code::before {
-      inset: 22px;
-      background: repeating-linear-gradient(to bottom, #706557 0 2px, transparent 2px 13px);
-      opacity: .65;
-    }
-    .visual-code::after { width: 52px; height: 2px; left: 22px; top: 61px; background: var(--accent); }
-
-    .visual-network { --visual-bg: #d9e1ea; }
-    .visual-network::before {
-      inset: 18px;
-      background:
-        radial-gradient(circle at 20% 30%, #31485f 0 5px, transparent 6px),
-        radial-gradient(circle at 75% 20%, #31485f 0 5px, transparent 6px),
-        radial-gradient(circle at 50% 75%, #31485f 0 5px, transparent 6px);
-    }
-    .visual-network::after {
-      width: 100px; height: 70px; left: 39px; top: 29px;
-      border-left: 1px solid #31485f; border-right: 1px solid #31485f; transform: skew(-25deg);
-    }
 
     .sidebar { padding-top: 5px; }
     .sidebar-section { padding: 0 0 30px; margin-bottom: 30px; border-bottom: 1px solid var(--line); }
@@ -424,10 +379,7 @@
       .briefing-story:last-child { border-bottom: 0; }
       .briefing-story.featured h2 { font-size: 27px; }
       main { padding-top: 42px; }
-      .post { grid-template-columns: minmax(0, 1fr) 94px; gap: 18px; padding: 26px 0; }
-      .post-visual { min-height: 94px; }
-      .visual-chain::before { width: 44px; height: 44px; left: 12px; top: 25px; }
-      .visual-chain::after { width: 44px; height: 44px; left: 39px; top: 25px; }
+      .post { padding: 26px 0; }
       .post-title { font-size: 20px; }
       .post-excerpt { -webkit-line-clamp: 2; font-size: 14px; }
       .sidebar { grid-template-columns: 1fr; }
@@ -525,14 +477,6 @@
                 {% endif %}
               </div>
             </a>
-            {% assign visual_index = forloop.index0 | modulo: 3 %}
-            {% if visual_index == 0 %}
-              <div class="post-visual visual-chain" role="img" aria-label="연결을 표현한 추상 이미지"></div>
-            {% elsif visual_index == 1 %}
-              <div class="post-visual visual-code" role="img" aria-label="코드를 표현한 추상 이미지"></div>
-            {% else %}
-              <div class="post-visual visual-network" role="img" aria-label="네트워크를 표현한 추상 이미지"></div>
-            {% endif %}
           </article>
         {% else %}
           <div class="empty-message visible">아직 공개된 기록이 없습니다.</div>
