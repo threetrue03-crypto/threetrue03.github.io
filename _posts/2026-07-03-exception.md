@@ -8,7 +8,7 @@ category: Python
 
 # Exception
 
-# Exception이란?
+## Exception이란?
 예외는 프로그램 실행 중에 발생하는 오류 상황을 의미한다.
 
 > 파일이 없거나, 잘못된 값을 넣거나, 리스트 범위를 벗어난 인덱스를 접근하면 예외가 발생한다.
