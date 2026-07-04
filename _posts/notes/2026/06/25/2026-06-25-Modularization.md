@@ -3,7 +3,7 @@ layout: post
 type: note
 title: "Modularization"
 description: "파이썬 기본 문법인 모듈화의 대한 설명이다."
-date: 2026-07-03
+date: 2026-06-25
 category: Python
 ---
 
