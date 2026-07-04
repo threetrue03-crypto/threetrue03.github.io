@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Conditional Expression"
-description: "OpenCV, Frame에 대해서 설명한다."
+description: "Conditional Expreesion에 대해서 설명하고, if문과의 차이도 본다. 결국 분기의 본질은 무엇인가?"
 category: Python
 ---
 
