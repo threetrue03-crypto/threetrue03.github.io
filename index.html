@@ -238,7 +238,10 @@
       letter-spacing: -1px;
     }
 
-    .section-note { margin: 0 0 28px; color: var(--muted); font-size: 14px; }
+    .section-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+    .section-note { margin: 0; color: var(--muted); font-size: 14px; }
+    .section-more { flex: 0 0 auto; margin-bottom: 1px; color: var(--muted); font-size: 13px; transition: color .2s ease, transform .2s ease; }
+    .section-more:hover { color: var(--accent); transform: translateX(3px); }
 
     .post-list { border-top: 1px solid var(--ink); }
 
@@ -466,8 +469,7 @@
 
   <main>
     <section id="posts" aria-labelledby="posts-title">
-      <h2 class="section-heading" id="posts-title">최근 기록</h2>
-      <p class="section-note">새로 정리한 순서대로 보여드려요.</p>
+      <div class="section-header"><div><h2 class="section-heading" id="posts-title">최근 기록</h2><p class="section-note">새로 정리한 순서대로 보여드려요.</p></div><a class="section-more" href="{{ '/notes/' | relative_url }}">Notes →</a></div>
 
       <div class="post-list" id="postList">
         {% for post in note_posts %}
