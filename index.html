@@ -261,14 +261,6 @@
       font-size: 12px;
     }
 
-    .status {
-      padding: 4px 8px;
-      color: var(--accent);
-      background: var(--accent-soft);
-      border-radius: 999px;
-      font-weight: 700;
-    }
-
     .post-title {
       margin: 0;
       font-family: var(--serif);
@@ -519,7 +511,6 @@
           <article class="post" data-topics="{{ searchable_topics | downcase | escape }}" data-month="{{ post.date | date: '%Y-%m' }}">
             <a href="{{ post.url | relative_url }}" aria-label="{{ post.title | escape }}">
               <div class="post-meta">
-                <span class="status">{{ post.status | default: "정리 완료" }}</span>
                 <span>{{ post.date | date: "%Y. %m. %d" }}</span>
                 {% if post.reading_time %}<span>·</span><span>{{ post.reading_time }}분</span>{% endif %}
               </div>
