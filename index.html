@@ -404,6 +404,7 @@
 <body>
   {% assign news_posts = site.posts | where: "type", "news" %}
   {% assign paper_posts = site.posts | where: "type", "paper" %}
+  {% assign book_posts = site.posts | where: "type", "book" %}
   {% assign note_posts = site.posts | where: "type", "note" %}
   <header class="site-header">
     <div class="header-inner">
@@ -412,6 +413,7 @@
         <a href="{{ '/notes/' | relative_url }}">Notes</a>
         <a href="{{ '/news/' | relative_url }}">News</a>
         <a href="{{ '/papers/' | relative_url }}">Papers</a>
+        <a href="{{ '/books/' | relative_url }}">Books</a>
         <a href="{{ '/about/' | relative_url }}">About</a>
       </nav>
       <button class="icon-button" id="searchButton" type="button" aria-label="글 검색" title="검색 (Ctrl/⌘ + K)">
@@ -431,11 +433,12 @@
       <header class="briefing-header">
         <div>
           <h1 class="briefing-title" id="briefing-title">기술 브리핑</h1>
-          <p class="briefing-updated">직접 읽고 정리한 뉴스와 논문입니다.</p>
+          <p class="briefing-updated">직접 읽고 정리한 뉴스, 논문, 책입니다.</p>
         </div>
         <div class="briefing-tabs" role="tablist" aria-label="브리핑 종류">
           <button class="briefing-tab active" type="button" role="tab" aria-selected="true" data-briefing-target="news">News</button>
           <button class="briefing-tab" type="button" role="tab" aria-selected="false" data-briefing-target="papers">Papers</button>
+          <button class="briefing-tab" type="button" role="tab" aria-selected="false" data-briefing-target="books">Books</button>
         </div>
       </header>
 
@@ -461,6 +464,19 @@
             </a>
           {% else %}
             <div class="briefing-story featured"><div><div class="briefing-label"><span>Papers</span></div><h2>아직 정리한 논문이 없습니다</h2><p class="briefing-summary">_posts/papers에 Markdown 기록을 추가하면 이곳에 표시됩니다.</p></div><div class="briefing-source"><span>sejin.dev</span></div></div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="briefing-panel" data-briefing-panel="books" hidden>
+        <div class="briefing-grid">
+          {% for item in book_posts limit: 3 %}
+            <a class="briefing-story{% if forloop.first %} featured{% endif %}" href="{{ item.url | relative_url }}">
+              <div><div class="briefing-label"><span>{{ item.category | default: "Books" }}</span><time>{{ item.date | date: "%Y.%m.%d" }}</time></div><h2>{{ item.title }}</h2><p class="briefing-summary">{{ item.description | default: item.excerpt | strip_html | strip_newlines | truncate: 150 }}</p></div>
+              <div class="briefing-source"><span>{{ item.author | default: item.source | default: "Book note" }}</span><span>기록 읽기 →</span></div>
+            </a>
+          {% else %}
+            <div class="briefing-story featured"><div><div class="briefing-label"><span>Books</span></div><h2>아직 정리한 책이 없습니다</h2><p class="briefing-summary">_posts/books에 Markdown 기록을 추가하면 이곳에 표시됩니다.</p></div><div class="briefing-source"><span>sejin.dev</span></div></div>
           {% endfor %}
         </div>
       </div>

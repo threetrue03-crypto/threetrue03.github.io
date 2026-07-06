@@ -18,3 +18,8 @@ defaults:
       type: "posts"
     values:
       type: paper
+  - scope:
+      path: "_posts/books"
+      type: "posts"
+    values:
+      type: book
