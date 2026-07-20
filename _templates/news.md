@@ -7,6 +7,9 @@ date: 2026-07-04
 category: Machine Learning
 source: 출처 이름
 source_url: https://example.com/original-news
+status: 읽음
+rating: 4/5
+last_modified_at: 2026-07-04
 ---
 
 ## 읽게 된 이유

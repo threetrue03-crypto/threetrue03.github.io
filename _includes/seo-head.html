@@ -1,0 +1,21 @@
+{% assign seo_title = page.title | default: site.title %}
+{% assign seo_description = page.description | default: site.description | strip_html | strip_newlines %}
+{% assign canonical_url = page.url | absolute_url %}
+<link rel="canonical" href="{{ canonical_url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS" href="{{ '/feed.xml' | absolute_url }}">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ seo_title | escape }}">
+<meta property="og:description" content="{{ seo_description | escape }}">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ seo_title | escape }}">
+<meta name="twitter:description" content="{{ seo_description | escape }}">
+{% if page.layout == 'post' %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{% if page.last_modified_at %}<meta property="article:modified_time" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":{{ page.title | jsonify }},"description":{{ seo_description | jsonify }},"datePublished":"{{ page.date | date_to_xmlschema }}","{% if page.last_modified_at %}dateModified":"{{ page.last_modified_at | date_to_xmlschema }}",{% endif %}"mainEntityOfPage":{{ canonical_url | jsonify }},"author":{"@type":"Person","name":"Sejin"},"publisher":{"@type":"Person","name":"Sejin"}}</script>
+{% else %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":{{ site.title | jsonify }},"description":{{ site.description | jsonify }},"url":{{ site.url | jsonify }},"potentialAction":{"@type":"SearchAction","target":"{{ site.url }}/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+{% endif %}

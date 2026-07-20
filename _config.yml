@@ -1,25 +1,36 @@
 title: sejin.dev
 description: 조세진의 기술 블로그
+url: "https://threetrue03-crypto.github.io"
+lang: ko-KR
 markdown: kramdown
 permalink: /posts/:title/
+exclude:
+  - TIL
+  - _templates
+  - scripts
+  - README.md
 defaults:
   - scope:
       path: "_posts/notes"
       type: "posts"
     values:
       type: note
+      layout: post
   - scope:
       path: "_posts/news"
       type: "posts"
     values:
       type: news
+      layout: post
   - scope:
       path: "_posts/papers"
       type: "posts"
     values:
       type: paper
+      layout: post
   - scope:
       path: "_posts/books"
       type: "posts"
     values:
       type: book
+      layout: post

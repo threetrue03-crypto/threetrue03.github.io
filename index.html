@@ -4,9 +4,10 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="기술 기록과 관심 분야의 최신 뉴스·논문을 모아보는 개발 블로그">
   <title>{{ site.title | default: "sejin.dev" }} — 기술 기록</title>
+  {% include seo-head.html %}
   <style>
     :root {
       --paper: #f7f4ed;
@@ -24,7 +25,7 @@
 
     * { box-sizing: border-box; }
 
-    html { max-width: 100%; overflow-x: hidden; scroll-behavior: smooth; overscroll-behavior-x: none; touch-action: pan-y; }
+    html { max-width: 100%; overflow-x: hidden; scroll-behavior: smooth; overscroll-behavior-x: none; touch-action: pan-x pan-y pinch-zoom; }
 
     body {
       max-width: 100%;
@@ -39,62 +40,6 @@
     a { color: inherit; text-decoration: none; }
     button, input { font: inherit; }
     button { color: inherit; }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      border-bottom: 1px solid var(--line);
-      background: color-mix(in srgb, var(--paper) 92%, transparent);
-      backdrop-filter: blur(14px);
-    }
-
-    .header-inner {
-      width: min(1180px, calc(100% - 40px));
-      height: 72px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-    }
-
-    .brand {
-      font-family: var(--serif);
-      font-size: 23px;
-      font-weight: 700;
-      letter-spacing: -0.7px;
-    }
-
-    .brand-dot { color: var(--accent); }
-    .brand-dev { color: var(--accent); }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      margin-left: auto;
-      font-size: 14px;
-    }
-
-    .nav a { color: var(--muted); transition: color .2s ease; }
-    .nav a:hover, .nav a[aria-current="page"] { color: var(--ink); }
-    .github-link { color: var(--muted); font-size: 14px; transition: color .2s ease; }
-    .github-link:hover { color: var(--ink); }
-
-    .icon-button {
-      width: 40px;
-      height: 40px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      background: transparent;
-      cursor: pointer;
-      transition: background .2s ease, transform .2s ease;
-    }
-
-    .icon-button:hover { background: var(--surface); transform: translateY(-1px); }
 
     .briefing {
       border-bottom: 1px solid var(--line);
@@ -337,31 +282,6 @@
     }
     .footer-links { display: flex; gap: 20px; }
 
-    .search-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 30;
-      display: none;
-      place-items: start center;
-      padding-top: 14vh;
-      background: rgb(20 20 20 / 50%);
-      backdrop-filter: blur(5px);
-    }
-    .search-overlay.open { display: grid; }
-    .search-panel {
-      width: min(620px, calc(100% - 32px));
-      padding: 18px;
-      border: 1px solid var(--line);
-      background: var(--surface);
-      box-shadow: 0 25px 80px rgb(0 0 0 / 22%);
-    }
-    .search-row { display: flex; align-items: center; gap: 12px; }
-    .search-row svg { flex: 0 0 auto; color: var(--muted); }
-    .search-input { width: 100%; padding: 10px 0; border: 0; outline: 0; color: var(--ink); background: transparent; font-size: 19px; }
-    .search-help { margin: 12px 0 0; padding-top: 13px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
-
-    .menu-button { display: none; }
-
     @media (max-width: 900px) {
       .briefing-grid { grid-template-columns: 1fr 1fr; }
       .briefing-story.featured { grid-column: 1 / -1; border-right: 0; border-bottom: 1px solid var(--line); }
@@ -371,11 +291,7 @@
     }
 
     @media (max-width: 640px) {
-      .header-inner, .briefing-inner, main, .footer-inner { width: min(100% - 32px, 1180px); }
-      .header-inner { height: 64px; }
-      .nav { display: none; }
-      .github-link { display: none; }
-      .menu-button { display: grid; }
+      .briefing-inner, main, .footer-inner { width: min(100% - 32px, 1180px); }
       .briefing-inner { padding: 28px 0 34px; }
       .briefing-header { align-items: flex-start; flex-direction: column; gap: 18px; }
       .briefing-title { font-size: 27px; }
@@ -406,26 +322,10 @@
   {% assign paper_posts = site.posts | where: "type", "paper" %}
   {% assign book_posts = site.posts | where: "type", "book" %}
   {% assign note_posts = site.posts | where: "type", "note" %}
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="{{ '/' | relative_url }}" aria-label="sejin.dev 홈">sejin<span class="brand-dot">.</span><span class="brand-dev">dev</span></a>
-      <nav class="nav" aria-label="주요 메뉴">
-        <a href="{{ '/notes/' | relative_url }}">Notes</a>
-        <a href="{{ '/news/' | relative_url }}">News</a>
-        <a href="{{ '/papers/' | relative_url }}">Papers</a>
-        <a href="{{ '/books/' | relative_url }}">Books</a>
-        <a href="{{ '/about/' | relative_url }}">About</a>
-      </nav>
-      <button class="icon-button" id="searchButton" type="button" aria-label="글 검색" title="검색 (Ctrl/⌘ + K)">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
-      </button>
-      <a class="github-link" href="https://github.com/threetrue03-crypto" target="_blank" rel="noreferrer">GitHub</a>
-      <button class="theme-toggle header-theme-toggle" type="button" data-theme-toggle aria-label="밤 모드로 전환" aria-pressed="false"><span class="theme-sun" aria-hidden="true">☀️</span><span class="theme-moon" aria-hidden="true">🌙</span></button>
-      <button class="icon-button menu-button mobile-menu-button" type="button" aria-label="메뉴 열기" aria-controls="mobileMenu" aria-expanded="false">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
-      </button>
-    </div>
-  </header>
+  {% assign briefing_count = news_posts.size | plus: paper_posts.size | plus: book_posts.size %}
+  {% assign default_briefing = 'news' %}
+  {% if news_posts.size == 0 and paper_posts.size > 0 %}{% assign default_briefing = 'papers' %}{% elsif news_posts.size == 0 and paper_posts.size == 0 and book_posts.size > 0 %}{% assign default_briefing = 'books' %}{% endif %}
+  {% include site-header.html %}
 
   <div id="top"></div>
   <section class="briefing" aria-labelledby="briefing-title">
@@ -435,14 +335,15 @@
           <h1 class="briefing-title" id="briefing-title">기술 브리핑</h1>
           <p class="briefing-updated">직접 읽고 정리한 뉴스, 논문, 책입니다.</p>
         </div>
-        <div class="briefing-tabs" role="tablist" aria-label="브리핑 종류">
-          <button class="briefing-tab active" type="button" role="tab" aria-selected="true" data-briefing-target="news">News</button>
-          <button class="briefing-tab" type="button" role="tab" aria-selected="false" data-briefing-target="papers">Papers</button>
-          <button class="briefing-tab" type="button" role="tab" aria-selected="false" data-briefing-target="books">Books</button>
-        </div>
+        {% if briefing_count > 0 %}<div class="briefing-tabs" role="tablist" aria-label="브리핑 종류">
+          <button class="briefing-tab{% if default_briefing == 'news' %} active{% endif %}" type="button" role="tab" aria-selected="{% if default_briefing == 'news' %}true{% else %}false{% endif %}" data-briefing-target="news">News</button>
+          <button class="briefing-tab{% if default_briefing == 'papers' %} active{% endif %}" type="button" role="tab" aria-selected="{% if default_briefing == 'papers' %}true{% else %}false{% endif %}" data-briefing-target="papers">Papers</button>
+          <button class="briefing-tab{% if default_briefing == 'books' %} active{% endif %}" type="button" role="tab" aria-selected="{% if default_briefing == 'books' %}true{% else %}false{% endif %}" data-briefing-target="books">Books</button>
+        </div>{% endif %}
       </header>
 
-      <div class="briefing-panel" data-briefing-panel="news">
+      {% if briefing_count > 0 %}
+      <div class="briefing-panel" data-briefing-panel="news"{% if default_briefing != 'news' %} hidden{% endif %}>
         <div class="briefing-grid">
           {% for item in news_posts limit: 3 %}
             <a class="briefing-story{% if forloop.first %} featured{% endif %}" href="{{ item.url | relative_url }}">
@@ -455,7 +356,7 @@
         </div>
       </div>
 
-      <div class="briefing-panel" data-briefing-panel="papers" hidden>
+      <div class="briefing-panel" data-briefing-panel="papers"{% if default_briefing != 'papers' %} hidden{% endif %}>
         <div class="briefing-grid">
           {% for item in paper_posts limit: 3 %}
             <a class="briefing-story{% if forloop.first %} featured{% endif %}" href="{{ item.url | relative_url }}">
@@ -468,7 +369,7 @@
         </div>
       </div>
 
-      <div class="briefing-panel" data-briefing-panel="books" hidden>
+      <div class="briefing-panel" data-briefing-panel="books"{% if default_briefing != 'books' %} hidden{% endif %}>
         <div class="briefing-grid">
           {% for item in book_posts limit: 3 %}
             <a class="briefing-story{% if forloop.first %} featured{% endif %}" href="{{ item.url | relative_url }}">
@@ -480,6 +381,18 @@
           {% endfor %}
         </div>
       </div>
+      {% else %}
+      <div class="briefing-panel">
+        <div class="briefing-grid">
+          {% for item in note_posts limit: 3 %}
+            <a class="briefing-story{% if forloop.first %} featured{% endif %}" href="{{ item.url | relative_url }}">
+              <div><div class="briefing-label"><span>{{ item.category | default: "Note" }}</span><time>{{ item.date | date: "%Y.%m.%d" }}</time></div><h2>{{ item.title }}</h2><p class="briefing-summary">{{ item.description | default: item.excerpt | strip_html | strip_newlines | truncate: 150 }}</p></div>
+              <div class="briefing-source"><span>Note</span><span>기록 읽기 →</span></div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
     </div>
   </section>
 
@@ -488,13 +401,13 @@
       <div class="section-header"><div><h2 class="section-heading" id="posts-title">최근 기록</h2><p class="section-note">새로 정리한 순서대로 보여드려요.</p></div><a class="section-more" href="{{ '/notes/' | relative_url }}">Notes →</a></div>
 
       <div class="post-list" id="postList">
-        {% for post in note_posts %}
+        {% for post in note_posts limit: 8 %}
           {% capture searchable_topics %}{{ post.category }} {{ post.categories | join: ' ' }} {{ post.tags | join: ' ' }}{% endcapture %}
           <article class="post" data-topics="{{ searchable_topics | downcase | escape }}" data-month="{{ post.date | date: '%Y-%m' }}">
             <a href="{{ post.url | relative_url }}" aria-label="{{ post.title | escape }}">
               <div class="post-meta">
                 <span>{{ post.date | date: "%Y. %m. %d" }}</span>
-                {% if post.reading_time %}<span>·</span><span>{{ post.reading_time }}분</span>{% endif %}
+                {% assign auto_reading_time = post.content | strip_html | number_of_words | divided_by: 250 | plus: 1 %}<span>·</span><span>{{ post.reading_time | default: auto_reading_time }}분</span>
               </div>
               <h3 class="post-title">{{ post.title }}</h3>
               <p class="post-excerpt">{{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 150 }}</p>
@@ -511,17 +424,16 @@
           <div class="empty-message visible">아직 공개된 기록이 없습니다.</div>
         {% endfor %}
       </div>
-      <div class="empty-message" id="emptyMessage">해당 주제의 기록이 아직 없습니다.</div>
     </section>
 
     <aside class="sidebar" aria-label="블로그 탐색">
       <section class="sidebar-section" id="topics">
         <h2 class="sidebar-title">Topics</h2>
         <div class="topic-list">
-          <button class="topic-button active" type="button" data-filter="all">전체</button>
+          <a class="topic-button active" href="{{ '/notes/' | relative_url }}">전체</a>
           {% assign note_groups = note_posts | group_by: "category" %}
           {% for category in note_groups %}
-            {% if category.name != "" %}<button class="topic-button" type="button" data-filter="{{ category.name | downcase | escape }}">{{ category.name }}</button>{% endif %}
+            {% if category.name != "" %}<a class="topic-button" href="{{ '/notes/' | relative_url }}?topic={{ category.name | downcase | uri_escape }}">{{ category.name }}</a>{% endif %}
           {% endfor %}
         </div>
       </section>
@@ -532,7 +444,7 @@
           {% assign posts_by_month = note_posts | group_by_exp: "post", "post.date | date: '%Y년 %m월'" %}
           {% for month in posts_by_month %}
             {% assign first_post = month.items | first %}
-            <button class="archive-button" type="button" data-month="{{ first_post.date | date: '%Y-%m' }}"><span>{{ month.name }}</span><span>{{ month.items | size }}</span></button>
+            <a class="archive-button" href="{{ '/notes/' | relative_url }}?month={{ first_post.date | date: '%Y-%m' }}"><span>{{ month.name }}</span><span>{{ month.items | size }}</span></a>
           {% endfor %}
         </div>
       </section>
@@ -543,31 +455,13 @@
   <footer id="about">
     <div class="footer-inner">
       <span>© 2026 sejin.dev · Built from Markdown notes.</span>
-      <div class="footer-links"><a href="https://github.com/threetrue03-crypto" target="_blank" rel="noreferrer">GitHub</a><a href="#top">맨 위로 ↑</a></div>
+      <div class="footer-links"><a href="{{ '/feed.xml' | relative_url }}">RSS</a><a href="https://github.com/threetrue03-crypto" target="_blank" rel="noreferrer">GitHub</a><a href="#top">맨 위로 ↑</a></div>
     </div>
   </footer>
-
-  <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="글 검색">
-    <div class="search-panel">
-      <div class="search-row">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
-        <input class="search-input" id="searchInput" type="search" placeholder="제목, 내용, 태그 검색" autocomplete="off">
-        <button class="icon-button" id="closeSearch" type="button" aria-label="검색 닫기">×</button>
-      </div>
-      <p class="search-help">Enter로 검색 · Esc로 닫기</p>
-    </div>
-  </div>
 
   {% include mobile-menu.html %}
 
   <script>
-    const searchButton = document.querySelector('#searchButton');
-    const searchOverlay = document.querySelector('#searchOverlay');
-    const searchInput = document.querySelector('#searchInput');
-    const closeSearch = document.querySelector('#closeSearch');
-    const posts = [...document.querySelectorAll('.post')];
-    const emptyMessage = document.querySelector('#emptyMessage');
-
     document.querySelectorAll('.briefing-tab').forEach(tab => {
       tab.addEventListener('click', () => {
         const target = tab.dataset.briefingTarget;
@@ -579,81 +473,6 @@
         document.querySelectorAll('.briefing-panel').forEach(panel => {
           panel.hidden = panel.dataset.briefingPanel !== target;
         });
-      });
-    });
-
-    function openSearch() {
-      searchOverlay.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      searchInput.focus();
-    }
-
-    function hideSearch() {
-      searchOverlay.classList.remove('open');
-      document.body.style.overflow = '';
-      searchInput.value = '';
-    }
-
-    function filterPosts(query) {
-      const term = query.trim().toLowerCase();
-      let visible = 0;
-      posts.forEach(post => {
-        const matches = !term || post.textContent.toLowerCase().includes(term) || post.dataset.topics.includes(term);
-        post.hidden = !matches;
-        if (matches) visible += 1;
-      });
-      emptyMessage.classList.toggle('visible', visible === 0);
-    }
-
-    searchButton.addEventListener('click', openSearch);
-    closeSearch.addEventListener('click', hideSearch);
-    searchOverlay.addEventListener('click', event => { if (event.target === searchOverlay) hideSearch(); });
-    searchInput.addEventListener('keydown', event => {
-      if (event.key === 'Enter') {
-        filterPosts(searchInput.value);
-        hideSearch();
-        document.querySelector('#posts').scrollIntoView();
-      }
-    });
-
-    document.addEventListener('keydown', event => {
-      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
-        event.preventDefault();
-        openSearch();
-      }
-      if (event.key === 'Escape') hideSearch();
-    });
-
-    document.querySelectorAll('.topic-button').forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('.topic-button').forEach(item => item.classList.remove('active'));
-        document.querySelectorAll('.archive-button').forEach(item => item.classList.remove('active'));
-        button.classList.add('active');
-        const filter = button.dataset.filter;
-        let visible = 0;
-        posts.forEach(post => {
-          const matches = filter === 'all' || post.dataset.topics.includes(filter);
-          post.hidden = !matches;
-          if (matches) visible += 1;
-        });
-        emptyMessage.classList.toggle('visible', visible === 0);
-      });
-    });
-
-    document.querySelectorAll('.archive-button').forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('.archive-button').forEach(item => item.classList.remove('active'));
-        document.querySelectorAll('.topic-button').forEach(item => item.classList.remove('active'));
-        button.classList.add('active');
-        const month = button.dataset.month;
-        let visible = 0;
-        posts.forEach(post => {
-          const matches = post.dataset.month === month;
-          post.hidden = !matches;
-          if (matches) visible += 1;
-        });
-        emptyMessage.classList.toggle('visible', visible === 0);
-        document.querySelector('#posts').scrollIntoView();
       });
     });
 

@@ -7,7 +7,11 @@ date: 2026-07-04
 category: Physical AI
 authors: "저자 이름"
 source: arXiv
+venue: arXiv
 paper_url: https://arxiv.org/abs/0000.00000
+status: 읽음
+rating: 4/5
+last_modified_at: 2026-07-04
 ---
 
 ## 이 논문을 고른 이유

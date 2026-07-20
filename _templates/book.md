@@ -8,6 +8,10 @@ category: Computer Science
 author: "저자 이름"
 source: 출판사
 book_url: https://example.com/book
+status: 완독
+rating: 4/5
+finished_at: 2026-07-06
+last_modified_at: 2026-07-06
 ---
 
 ## 이 책을 고른 이유
