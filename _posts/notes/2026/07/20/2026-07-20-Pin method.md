@@ -111,3 +111,31 @@ led.init(Pin.OUT, value=0)
 ```
 
 ### irq() - 핀 상태가 바뀔 때마다 함수를 실행시킬 수 있다.
+irq는 Interrupt Request이고, 인터럽트가 발생했을 때 요청하는 메서드로 해석할 수 있다.
+
+```python
+irq(
+    trigger=...,
+    handler=...,
+)
+```
+
+`handler`는 실행할 함수를 지정하는 것이다.
+`trigger`는 함수가 실행될 조건을 지정할 수 있고 다음 두 가지로 확인해볼 수 있다.
+- `Pin.IRQ_FALLING`: HIGH에서 LOW로 내려갈 때
+```
+IRQ_FALLING
+
+3.3V ───┐
+        └──── 0V
+       이 순간 실행
+```
+
+- `Pin.IRQ_RISING`: LOW에서 HIGH로 올라갈 때
+```
+IRQ_RISING
+
+0V ─────┐
+        └──── 3.3V
+       이 순간 실행
+```
