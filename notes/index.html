@@ -123,8 +123,16 @@ permalink: /notes/
     const notes = [...document.querySelectorAll('.post')];
     const search = document.querySelector('#noteSearch');
     const empty = document.querySelector('#emptyResult');
+    const topicButtons = [...document.querySelectorAll('.filter-button[data-topic]')];
     let selectedTopic = 'all';
     let selectedMonth = 'all';
+
+    function updateTopicUrl(topic) {
+      const url = new URL(location.href);
+      if (topic === 'all') url.searchParams.delete('topic');
+      else url.searchParams.set('topic', topic);
+      history.replaceState(null, '', url);
+    }
 
     function applyFilters() {
       const query = search.value.trim().toLowerCase();
@@ -142,14 +150,14 @@ permalink: /notes/
 
     search.addEventListener('input', applyFilters);
 
-    document.querySelectorAll('[data-topic]').forEach(button => {
-      if (!button.classList.contains('filter-button')) return;
+    topicButtons.forEach(button => {
       button.addEventListener('click', () => {
-        document.querySelectorAll('.filter-button[data-topic]').forEach(item => item.classList.remove('active'));
+        topicButtons.forEach(item => item.classList.remove('active'));
         document.querySelectorAll('.filter-button[data-month]').forEach(item => item.classList.remove('active'));
         button.classList.add('active');
         selectedTopic = button.dataset.topic;
         selectedMonth = 'all';
+        updateTopicUrl(selectedTopic);
         applyFilters();
       });
     });
@@ -160,6 +168,7 @@ permalink: /notes/
         button.classList.add('active');
         selectedTopic = 'all';
         selectedMonth = button.dataset.month;
+        updateTopicUrl('all');
         applyFilters();
       });
     });
@@ -172,6 +181,11 @@ permalink: /notes/
         [...notes].sort((a, b) => direction * (Number(a.dataset.date) - Number(b.dataset.date))).forEach(note => list.append(note));
       });
     });
+
+    const requestedTopic = new URLSearchParams(location.search).get('topic')?.trim().toLowerCase();
+    const requestedButton = requestedTopic ? topicButtons.find(button => button.dataset.topic === requestedTopic) : null;
+    if (requestedButton) requestedButton.click();
+    else applyFilters();
   </script>
 </body>
 </html>
