@@ -20,10 +20,8 @@
     @media(max-width:700px){.post-header,.article-shell,.post-more,.post-pagination,.post-footer{width:calc(100% - 32px)}.post-header{padding:56px 0 38px}h1{font-size:42px;letter-spacing:-1.8px}.description{font-size:16px}.toc{top:76px}.post-body{max-width:100%;padding-bottom:88px;font-size:16px;overflow:hidden}.post-body h2{font-size:27px}.post-body h3{font-size:21px}.post-body h4{font-size:17px}.post-body pre{max-width:100%;margin-inline:0;padding:18px}.post-body table{max-width:100%;margin:26px 0 34px;padding-bottom:6px;overflow-x:auto;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}.post-body th,.post-body td{padding:11px 13px}.progress{top:64px}.reader-controls{right:16px;bottom:calc(16px + env(safe-area-inset-bottom))}.related-grid{grid-template-columns:1fr}.post-pagination{grid-template-columns:1fr}.post-pagination a:last-child{text-align:left;border-top:1px solid var(--line)}.resume-reading{left:16px;bottom:calc(70px + env(safe-area-inset-bottom))}.image-dialog{padding:18px}.image-dialog img{max-height:calc(100vh - 36px)}}
   </style>
   {% include theme-head.html %}
-  {% if page.math or content contains '$' %}
   <script>window.MathJax={tex:{inlineMath:{'[+]':[['$','$']]}}};</script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
-  {% endif %}
 </head>
 <body>
   <div class="progress" id="progress"></div>
