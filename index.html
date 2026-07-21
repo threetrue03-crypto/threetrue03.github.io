@@ -407,7 +407,6 @@
             <a href="{{ post.url | relative_url }}" aria-label="{{ post.title | escape }}">
               <div class="post-meta">
                 <span>{{ post.date | date: "%Y. %m. %d" }}</span>
-                {% assign auto_reading_time = post.content | strip_html | number_of_words | divided_by: 250 | plus: 1 %}<span>·</span><span>{{ post.reading_time | default: auto_reading_time }}분</span>
               </div>
               <h3 class="post-title">{{ post.title }}</h3>
               <p class="post-excerpt">{{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 150 }}</p>
