@@ -122,7 +122,9 @@ irq(
 
 `handler`는 실행할 함수를 지정하는 것이다.
 `trigger`는 함수가 실행될 조건을 지정할 수 있고 다음 두 가지로 확인해볼 수 있다.
+
 - `Pin.IRQ_FALLING`: HIGH에서 LOW로 내려갈 때
+
 ```
 IRQ_FALLING
 
@@ -132,6 +134,7 @@ IRQ_FALLING
 ```
 
 - `Pin.IRQ_RISING`: LOW에서 HIGH로 올라갈 때
+
 ```
 IRQ_RISING
 
