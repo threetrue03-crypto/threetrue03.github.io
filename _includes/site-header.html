@@ -6,6 +6,10 @@
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 5v14M5 8h5M10 8v4M10 12h5M10 16h5"></path><circle cx="5" cy="5" r="1.5"></circle><circle cx="10" cy="8" r="1.5"></circle><circle cx="15" cy="12" r="1.5"></circle><circle cx="15" cy="16" r="1.5"></circle></svg>
       <span>목차</span>
     </button>
+    <div class="mobile-reader-controls" role="group" aria-label="본문 글자 크기 조절">
+      <button type="button" data-reader-action="decrease" aria-label="본문 글자 축소">가−</button>
+      <button type="button" data-reader-action="increase" aria-label="본문 글자 확대">가+</button>
+    </div>
     {% endif %}
     <nav class="nav" aria-label="주요 메뉴">
       <a href="{{ '/notes/' | relative_url }}"{% if page.url contains '/notes/' or page.type == 'note' %} aria-current="page"{% endif %}>Notes</a>
