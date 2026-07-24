@@ -1,5 +1,27 @@
 [
   {
+    "title": "Don't Trust the Label: License Laundering in AI Supply Chains",
+    "url": "https://arxiv.org/abs/2607.20300",
+    "discussion_url": "https://news.ycombinator.com/item?id=49030816",
+    "source": "arxiv.org",
+    "date": "2026-07-24T03:07:06Z",
+    "timestamp": 1784862426,
+    "category": "Machine Learning",
+    "score": 2,
+    "comments": 0
+  },
+  {
+    "title": "AI Was Supposed to Lift Everybody., The Price Tag Says Otherwise",
+    "url": "https://AllyAgentOperations.com/blog/ai-pricing-access-everyone/",
+    "discussion_url": "https://news.ycombinator.com/item?id=49030808",
+    "source": "allyagentoperations.com",
+    "date": "2026-07-24T03:06:07Z",
+    "timestamp": 1784862367,
+    "category": "Machine Learning",
+    "score": 2,
+    "comments": 0
+  },
+  {
     "title": "The cost of GPUs goes far beyond AI data centers",
     "url": "https://www.theverge.com/cs/features/937356/ai-data-center-gpu-environmental-impact",
     "discussion_url": "https://news.ycombinator.com/item?id=49030636",
@@ -18,7 +40,7 @@
     "date": "2026-07-24T01:51:54Z",
     "timestamp": 1784857914,
     "category": "Machine Learning",
-    "score": 2,
+    "score": 3,
     "comments": 0
   },
   {
@@ -62,7 +84,7 @@
     "date": "2026-07-24T00:04:35Z",
     "timestamp": 1784851475,
     "category": "Machine Learning",
-    "score": 3,
+    "score": 4,
     "comments": 1
   },
   {
@@ -73,8 +95,19 @@
     "date": "2026-07-23T23:26:51Z",
     "timestamp": 1784849211,
     "category": "Machine Learning",
-    "score": 12,
+    "score": 13,
     "comments": 2
+  },
+  {
+    "title": "When AI Attacks AI: Why Every System Needs a Guard",
+    "url": "https://medium.com/@alanscottencinas/when-ai-attacks-ai-why-every-system-needs-a-guard-8ba46f904378",
+    "discussion_url": "https://news.ycombinator.com/item?id=49029289",
+    "source": "medium.com",
+    "date": "2026-07-23T23:09:15Z",
+    "timestamp": 1784848155,
+    "category": "Machine Learning",
+    "score": 2,
+    "comments": 0
   },
   {
     "title": "A taxonomy of omnicidal futures involving artificial intelligence (2025)",
@@ -84,8 +117,8 @@
     "date": "2026-07-23T22:51:13Z",
     "timestamp": 1784847073,
     "category": "Machine Learning",
-    "score": 56,
-    "comments": 45
+    "score": 60,
+    "comments": 48
   },
   {
     "title": "Ground Robots Inherit the Kill Zone",
@@ -95,7 +128,7 @@
     "date": "2026-07-23T22:49:36Z",
     "timestamp": 1784846976,
     "category": "Physical AI",
-    "score": 2,
+    "score": 4,
     "comments": 0
   },
   {
@@ -117,7 +150,7 @@
     "date": "2026-07-23T22:12:35Z",
     "timestamp": 1784844755,
     "category": "Machine Learning",
-    "score": 7,
+    "score": 8,
     "comments": 5
   },
   {
@@ -132,14 +165,14 @@
     "comments": 0
   },
   {
-    "title": "Solar Open 2: Korea's Sovereign Foundation Model, Built for Agentic Use",
-    "url": "https://www.upstage.ai/blog/en/solar-open-2",
-    "discussion_url": "https://news.ycombinator.com/item?id=49028648",
-    "source": "upstage.ai",
-    "date": "2026-07-23T22:02:09Z",
-    "timestamp": 1784844129,
+    "title": "Which AI models understand insurance work?",
+    "url": "https://www.coveragecat.com/ai/leaderboard",
+    "discussion_url": "https://news.ycombinator.com/item?id=49028661",
+    "source": "coveragecat.com",
+    "date": "2026-07-23T22:03:26Z",
+    "timestamp": 1784844206,
     "category": "Machine Learning",
-    "score": 3,
+    "score": 2,
     "comments": 0
   },
   {
@@ -150,41 +183,8 @@
     "date": "2026-07-23T21:51:15Z",
     "timestamp": 1784843475,
     "category": "Computer Architecture",
-    "score": 9,
+    "score": 10,
     "comments": 0
-  },
-  {
-    "title": "The AI Productivity Paradox",
-    "url": "https://www.svpg.com/the-ai-productivity-paradox/",
-    "discussion_url": "https://news.ycombinator.com/item?id=49028368",
-    "source": "svpg.com",
-    "date": "2026-07-23T21:34:22Z",
-    "timestamp": 1784842462,
-    "category": "Machine Learning",
-    "score": 4,
-    "comments": 0
-  },
-  {
-    "title": "AI Agents Don't Respect Font Licenses",
-    "url": "https://www.mixfont.com/blog/ai-agents-dont-respect-font-licenses",
-    "discussion_url": "https://news.ycombinator.com/item?id=49028322",
-    "source": "mixfont.com",
-    "date": "2026-07-23T21:30:18Z",
-    "timestamp": 1784842218,
-    "category": "Machine Learning",
-    "score": 2,
-    "comments": 0
-  },
-  {
-    "title": "Mark Zuckerberg launches AI optimism campaign",
-    "url": "https://www.axios.com/2026/07/23/mark-zuckerberg-ai-optimism",
-    "discussion_url": "https://news.ycombinator.com/item?id=49028170",
-    "source": "axios.com",
-    "date": "2026-07-23T21:17:59Z",
-    "timestamp": 1784841479,
-    "category": "Machine Learning",
-    "score": 8,
-    "comments": 4
   },
   {
     "title": "DARPA Robotic mechanic for broken satellites launched",
@@ -205,7 +205,7 @@
     "date": "2026-07-23T14:55:32Z",
     "timestamp": 1784818532,
     "category": "Computer Architecture",
-    "score": 86,
-    "comments": 11
+    "score": 90,
+    "comments": 12
   }
 ]
