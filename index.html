@@ -98,12 +98,36 @@
 
     .briefing-panel[hidden] { display: none; }
 
+    .briefing-group + .briefing-group { margin-top: 30px; }
+
+    .briefing-group-title {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .briefing-group-title span {
+      padding: 4px 7px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--accent);
+      font-size: 9px;
+    }
+
     .briefing-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.45fr) repeat(2, minmax(0, .78fr));
       border-top: 1px solid var(--ink);
       border-bottom: 1px solid var(--line);
     }
+
+    .briefing-grid.empty { grid-template-columns: 1fr; }
 
     .briefing-story {
       min-width: 0;
@@ -322,9 +346,10 @@
   {% assign paper_posts = site.posts | where: "type", "paper" %}
   {% assign book_posts = site.posts | where: "type", "book" %}
   {% assign note_posts = site.posts | where: "type", "note" %}
-  {% assign briefing_count = news_posts.size | plus: paper_posts.size | plus: book_posts.size %}
+  {% assign auto_news = site.data.tech_news %}
+  {% assign news_count = news_posts.size | plus: auto_news.size %}
   {% assign default_briefing = 'news' %}
-  {% if news_posts.size == 0 and paper_posts.size > 0 %}{% assign default_briefing = 'papers' %}{% elsif news_posts.size == 0 and paper_posts.size == 0 and book_posts.size > 0 %}{% assign default_briefing = 'books' %}{% endif %}
+  {% if news_count == 0 and paper_posts.size > 0 %}{% assign default_briefing = 'papers' %}{% elsif news_count == 0 and paper_posts.size == 0 and book_posts.size > 0 %}{% assign default_briefing = 'books' %}{% endif %}
   {% include site-header.html %}
 
   <div id="top"></div>
@@ -333,66 +358,74 @@
       <header class="briefing-header">
         <div>
           <h1 class="briefing-title" id="briefing-title">기술 브리핑</h1>
-          <p class="briefing-updated">직접 읽고 정리한 뉴스, 논문, 책입니다.</p>
+          <p class="briefing-updated">관심 분야의 최신 기술 뉴스와 직접 읽고 정리한 자료를 모았습니다.</p>
         </div>
-        {% if briefing_count > 0 %}<div class="briefing-tabs" role="tablist" aria-label="브리핑 종류">
+        <div class="briefing-tabs" role="tablist" aria-label="브리핑 종류">
           <button class="briefing-tab{% if default_briefing == 'news' %} active{% endif %}" type="button" role="tab" aria-selected="{% if default_briefing == 'news' %}true{% else %}false{% endif %}" data-briefing-target="news">News</button>
           <button class="briefing-tab{% if default_briefing == 'papers' %} active{% endif %}" type="button" role="tab" aria-selected="{% if default_briefing == 'papers' %}true{% else %}false{% endif %}" data-briefing-target="papers">Papers</button>
           <button class="briefing-tab{% if default_briefing == 'books' %} active{% endif %}" type="button" role="tab" aria-selected="{% if default_briefing == 'books' %}true{% else %}false{% endif %}" data-briefing-target="books">Books</button>
-        </div>{% endif %}
+        </div>
       </header>
 
-      {% if briefing_count > 0 %}
       <div class="briefing-panel" data-briefing-panel="news"{% if default_briefing != 'news' %} hidden{% endif %}>
-        <div class="briefing-grid">
+        {% if news_posts.size > 0 %}
+        <section class="briefing-group" aria-labelledby="manual-news-title">
+          <h2 class="briefing-group-title" id="manual-news-title">내가 정리한 뉴스</h2>
+          <div class="briefing-grid">
           {% for item in news_posts limit: 3 %}
             <a class="briefing-story{% if forloop.first %} featured{% endif %}" href="{{ item.url | relative_url }}">
               <div><div class="briefing-label"><span>{{ item.category | default: "News" }}</span><time>{{ item.date | date: "%Y.%m.%d" }}</time></div><h2>{{ item.title }}</h2><p class="briefing-summary">{{ item.description | default: item.excerpt | strip_html | strip_newlines | truncate: 150 }}</p></div>
               <div class="briefing-source"><span>{{ item.source | default: "sejin.dev" }}</span><span>기록 읽기 →</span></div>
             </a>
-          {% else %}
-            <div class="briefing-story featured"><div><div class="briefing-label"><span>News</span></div><h2>아직 정리한 뉴스가 없습니다</h2><p class="briefing-summary">_posts/news에 Markdown 기록을 추가하면 이곳에 표시됩니다.</p></div><div class="briefing-source"><span>sejin.dev</span></div></div>
           {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+        {% if auto_news.size > 0 %}
+        <section class="briefing-group" aria-labelledby="auto-news-title">
+          <h2 class="briefing-group-title" id="auto-news-title">새로 나온 기술 뉴스 <span>자동 수집</span></h2>
+          <div class="briefing-grid">
+          {% for item in auto_news limit: 3 %}
+            <a class="briefing-story{% if forloop.first %} featured{% endif %}" href="{{ item.url | escape }}" target="_blank" rel="noreferrer">
+              <div><div class="briefing-label"><span>{{ item.category | escape }}</span><time>{{ item.date | date: "%Y.%m.%d" }}</time></div><h2>{{ item.title | escape }}</h2><p class="briefing-summary">Hacker News에서 발견한 {{ item.category | escape }} 관련 소식입니다.</p></div>
+              <div class="briefing-source"><span>{{ item.source | escape }}</span><span>원문 보기 ↗</span></div>
+            </a>
+          {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+        {% if news_count == 0 %}
+        <div class="briefing-grid empty">
+          <div class="briefing-story featured"><div><div class="briefing-label"><span>News</span></div><h2>아직 기록하거나 수집한 기술 뉴스가 없습니다</h2><p class="briefing-summary">직접 작성한 뉴스와 관심 분야의 새 소식이 이곳에 표시됩니다.</p></div><div class="briefing-source"><span>sejin.dev</span></div></div>
         </div>
+        {% endif %}
       </div>
 
       <div class="briefing-panel" data-briefing-panel="papers"{% if default_briefing != 'papers' %} hidden{% endif %}>
-        <div class="briefing-grid">
+        <div class="briefing-grid{% if paper_posts.size == 0 %} empty{% endif %}">
           {% for item in paper_posts limit: 3 %}
             <a class="briefing-story{% if forloop.first %} featured{% endif %}" href="{{ item.url | relative_url }}">
               <div><div class="briefing-label"><span>{{ item.category | default: "Paper" }}</span><time>{{ item.date | date: "%Y.%m.%d" }}</time></div><h2>{{ item.title }}</h2><p class="briefing-summary">{{ item.description | default: item.excerpt | strip_html | strip_newlines | truncate: 150 }}</p></div>
               <div class="briefing-source"><span>{{ item.source | default: "Paper note" }}</span><span>기록 읽기 →</span></div>
             </a>
           {% else %}
-            <div class="briefing-story featured"><div><div class="briefing-label"><span>Papers</span></div><h2>아직 정리한 논문이 없습니다</h2><p class="briefing-summary">_posts/papers에 Markdown 기록을 추가하면 이곳에 표시됩니다.</p></div><div class="briefing-source"><span>sejin.dev</span></div></div>
+            <div class="briefing-story featured"><div><div class="briefing-label"><span>Papers</span></div><h2>아직 기록한 논문이 없습니다</h2><p class="briefing-summary">_posts/papers에 Markdown 기록을 추가하면 이곳에 표시됩니다.</p></div><div class="briefing-source"><span>sejin.dev</span></div></div>
           {% endfor %}
         </div>
       </div>
 
       <div class="briefing-panel" data-briefing-panel="books"{% if default_briefing != 'books' %} hidden{% endif %}>
-        <div class="briefing-grid">
+        <div class="briefing-grid{% if book_posts.size == 0 %} empty{% endif %}">
           {% for item in book_posts limit: 3 %}
             <a class="briefing-story{% if forloop.first %} featured{% endif %}" href="{{ item.url | relative_url }}">
               <div><div class="briefing-label"><span>{{ item.category | default: "Books" }}</span><time>{{ item.date | date: "%Y.%m.%d" }}</time></div><h2>{{ item.title }}</h2><p class="briefing-summary">{{ item.description | default: item.excerpt | strip_html | strip_newlines | truncate: 150 }}</p></div>
               <div class="briefing-source"><span>{{ item.author | default: item.source | default: "Book note" }}</span><span>기록 읽기 →</span></div>
             </a>
           {% else %}
-            <div class="briefing-story featured"><div><div class="briefing-label"><span>Books</span></div><h2>아직 정리한 책이 없습니다</h2><p class="briefing-summary">_posts/books에 Markdown 기록을 추가하면 이곳에 표시됩니다.</p></div><div class="briefing-source"><span>sejin.dev</span></div></div>
+            <div class="briefing-story featured"><div><div class="briefing-label"><span>Books</span></div><h2>아직 기록한 책이 없습니다</h2><p class="briefing-summary">_posts/books에 Markdown 기록을 추가하면 이곳에 표시됩니다.</p></div><div class="briefing-source"><span>sejin.dev</span></div></div>
           {% endfor %}
         </div>
       </div>
-      {% else %}
-      <div class="briefing-panel">
-        <div class="briefing-grid">
-          {% for item in note_posts limit: 3 %}
-            <a class="briefing-story{% if forloop.first %} featured{% endif %}" href="{{ item.url | relative_url }}">
-              <div><div class="briefing-label"><span>{{ item.category | default: "Note" }}</span><time>{{ item.date | date: "%Y.%m.%d" }}</time></div><h2>{{ item.title }}</h2><p class="briefing-summary">{{ item.description | default: item.excerpt | strip_html | strip_newlines | truncate: 150 }}</p></div>
-              <div class="briefing-source"><span>Note</span><span>기록 읽기 →</span></div>
-            </a>
-          {% endfor %}
-        </div>
-      </div>
-      {% endif %}
     </div>
   </section>
 

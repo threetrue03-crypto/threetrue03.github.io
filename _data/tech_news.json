@@ -1,0 +1,211 @@
+[
+  {
+    "title": "The cost of GPUs goes far beyond AI data centers",
+    "url": "https://www.theverge.com/cs/features/937356/ai-data-center-gpu-environmental-impact",
+    "discussion_url": "https://news.ycombinator.com/item?id=49030636",
+    "source": "theverge.com",
+    "date": "2026-07-24T02:35:23Z",
+    "timestamp": 1784860523,
+    "category": "Computer Architecture",
+    "score": 3,
+    "comments": 0
+  },
+  {
+    "title": "Why AI works worse in your language",
+    "url": "https://artifipedia.com/blog/multilingual-ai",
+    "discussion_url": "https://news.ycombinator.com/item?id=49030402",
+    "source": "artifipedia.com",
+    "date": "2026-07-24T01:51:54Z",
+    "timestamp": 1784857914,
+    "category": "Machine Learning",
+    "score": 2,
+    "comments": 0
+  },
+  {
+    "title": "Brockovich Data Center Reporting – U.S. AI Data Center Awareness and Issue Map",
+    "url": "https://brockovichdatacenter.com/index.html",
+    "discussion_url": "https://news.ycombinator.com/item?id=49030230",
+    "source": "brockovichdatacenter.com",
+    "date": "2026-07-24T01:21:00Z",
+    "timestamp": 1784856060,
+    "category": "Machine Learning",
+    "score": 2,
+    "comments": 0
+  },
+  {
+    "title": "Show HN: Turo – An Aggressive Token-Saving Proxy for CLI AI Agents",
+    "url": "https://github.com/kdeps/turo",
+    "discussion_url": "https://news.ycombinator.com/item?id=49029919",
+    "source": "github.com",
+    "date": "2026-07-24T00:32:12Z",
+    "timestamp": 1784853132,
+    "category": "Machine Learning",
+    "score": 2,
+    "comments": 1
+  },
+  {
+    "title": "Intel stock jumps as it rides AI boom to fastest revenue growth in almost 15 yrs",
+    "url": "https://www.cnbc.com/2026/07/23/intel-intc-earnings-report-q2-2026.html",
+    "discussion_url": "https://news.ycombinator.com/item?id=49029818",
+    "source": "cnbc.com",
+    "date": "2026-07-24T00:18:35Z",
+    "timestamp": 1784852315,
+    "category": "Machine Learning",
+    "score": 2,
+    "comments": 0
+  },
+  {
+    "title": "If AI companies avoid AI slop, shouldn't we?",
+    "url": "https://www.machinesociety.ai/p/if-ai-companies-avoid-ai-slop-shouldnt",
+    "discussion_url": "https://news.ycombinator.com/item?id=49029710",
+    "source": "machinesociety.ai",
+    "date": "2026-07-24T00:04:35Z",
+    "timestamp": 1784851475,
+    "category": "Machine Learning",
+    "score": 3,
+    "comments": 1
+  },
+  {
+    "title": "AI bet goes awry: Oracle fires 21,000 employees",
+    "url": "https://www.jpost.com/business-and-innovation/tech-and-start-ups/article-903442",
+    "discussion_url": "https://news.ycombinator.com/item?id=49029453",
+    "source": "jpost.com",
+    "date": "2026-07-23T23:26:51Z",
+    "timestamp": 1784849211,
+    "category": "Machine Learning",
+    "score": 12,
+    "comments": 2
+  },
+  {
+    "title": "A taxonomy of omnicidal futures involving artificial intelligence (2025)",
+    "url": "https://arxiv.org/abs/2507.09369",
+    "discussion_url": "https://news.ycombinator.com/item?id=49029133",
+    "source": "arxiv.org",
+    "date": "2026-07-23T22:51:13Z",
+    "timestamp": 1784847073,
+    "category": "Machine Learning",
+    "score": 56,
+    "comments": 45
+  },
+  {
+    "title": "Ground Robots Inherit the Kill Zone",
+    "url": "https://spectrum.ieee.org/ukraine-ground-drones",
+    "discussion_url": "https://news.ycombinator.com/item?id=49029119",
+    "source": "spectrum.ieee.org",
+    "date": "2026-07-23T22:49:36Z",
+    "timestamp": 1784846976,
+    "category": "Physical AI",
+    "score": 2,
+    "comments": 0
+  },
+  {
+    "title": "Someone Call Tesla a Robotaxi, or SpaceX, Quick",
+    "url": "https://www.bloomberg.com/opinion/articles/2026-07-23/tesla-disappoints-on-earnings-and-its-robotaxi-rollout-too",
+    "discussion_url": "https://news.ycombinator.com/item?id=49028783",
+    "source": "bloomberg.com",
+    "date": "2026-07-23T22:15:02Z",
+    "timestamp": 1784844902,
+    "category": "Physical AI",
+    "score": 3,
+    "comments": 0
+  },
+  {
+    "title": "AI Kill Switch Act: Official Bill Text by Reps. Lieu and Moran (2026)",
+    "url": "https://lieu.house.gov/media-center/press-releases/reps-lieu-and-moran-introduce-bill-require-kill-switch-ai-systems-can",
+    "discussion_url": "https://news.ycombinator.com/item?id=49028757",
+    "source": "lieu.house.gov",
+    "date": "2026-07-23T22:12:35Z",
+    "timestamp": 1784844755,
+    "category": "Machine Learning",
+    "score": 7,
+    "comments": 5
+  },
+  {
+    "title": "New flapping robot swims and flies like a diving bird",
+    "url": "https://news.mit.edu/2026/new-flapping-robot-swims-and-flies-like-diving-bird-0709",
+    "discussion_url": "https://news.ycombinator.com/item?id=49028689",
+    "source": "news.mit.edu",
+    "date": "2026-07-23T22:06:16Z",
+    "timestamp": 1784844376,
+    "category": "Physical AI",
+    "score": 3,
+    "comments": 0
+  },
+  {
+    "title": "Solar Open 2: Korea's Sovereign Foundation Model, Built for Agentic Use",
+    "url": "https://www.upstage.ai/blog/en/solar-open-2",
+    "discussion_url": "https://news.ycombinator.com/item?id=49028648",
+    "source": "upstage.ai",
+    "date": "2026-07-23T22:02:09Z",
+    "timestamp": 1784844129,
+    "category": "Machine Learning",
+    "score": 3,
+    "comments": 0
+  },
+  {
+    "title": "AMD calls CUDA a 'non-event'",
+    "url": "https://www.pcgamer.com/hardware/amd-calls-cuda-a-non-event-says-companies-are-programming-at-levels-where-the-nvidia-tech-doesnt-really-matter/",
+    "discussion_url": "https://news.ycombinator.com/item?id=49028516",
+    "source": "pcgamer.com",
+    "date": "2026-07-23T21:51:15Z",
+    "timestamp": 1784843475,
+    "category": "Computer Architecture",
+    "score": 9,
+    "comments": 0
+  },
+  {
+    "title": "The AI Productivity Paradox",
+    "url": "https://www.svpg.com/the-ai-productivity-paradox/",
+    "discussion_url": "https://news.ycombinator.com/item?id=49028368",
+    "source": "svpg.com",
+    "date": "2026-07-23T21:34:22Z",
+    "timestamp": 1784842462,
+    "category": "Machine Learning",
+    "score": 4,
+    "comments": 0
+  },
+  {
+    "title": "AI Agents Don't Respect Font Licenses",
+    "url": "https://www.mixfont.com/blog/ai-agents-dont-respect-font-licenses",
+    "discussion_url": "https://news.ycombinator.com/item?id=49028322",
+    "source": "mixfont.com",
+    "date": "2026-07-23T21:30:18Z",
+    "timestamp": 1784842218,
+    "category": "Machine Learning",
+    "score": 2,
+    "comments": 0
+  },
+  {
+    "title": "Mark Zuckerberg launches AI optimism campaign",
+    "url": "https://www.axios.com/2026/07/23/mark-zuckerberg-ai-optimism",
+    "discussion_url": "https://news.ycombinator.com/item?id=49028170",
+    "source": "axios.com",
+    "date": "2026-07-23T21:17:59Z",
+    "timestamp": 1784841479,
+    "category": "Machine Learning",
+    "score": 8,
+    "comments": 4
+  },
+  {
+    "title": "DARPA Robotic mechanic for broken satellites launched",
+    "url": "https://www.darpa.mil/news/2026/robotic-servicing-of-geosynchronous-satellites-lifts-off",
+    "discussion_url": "https://news.ycombinator.com/item?id=49027558",
+    "source": "darpa.mil",
+    "date": "2026-07-23T20:25:41Z",
+    "timestamp": 1784838341,
+    "category": "Physical AI",
+    "score": 2,
+    "comments": 0
+  },
+  {
+    "title": "Learn WebGPU for C++",
+    "url": "https://eliemichel.github.io/LearnWebGPU/",
+    "discussion_url": "https://news.ycombinator.com/item?id=49022663",
+    "source": "eliemichel.github.io",
+    "date": "2026-07-23T14:55:32Z",
+    "timestamp": 1784818532,
+    "category": "Computer Architecture",
+    "score": 86,
+    "comments": 11
+  }
+]
