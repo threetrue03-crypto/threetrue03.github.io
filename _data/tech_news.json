@@ -1,5 +1,14 @@
 [
   {
+    "title": "Tesla Sinks on Investor Angst over AI Spending, Profit Drop",
+    "url": "https://news.bloomberglaw.com/texas-brief/tesla-profit-falls-well-short-of-expectations-as-costs-rise-3",
+    "discussion_url": "https://news.ycombinator.com/item?id=49030876",
+    "source": "news.bloomberglaw.com",
+    "date": "2026-07-24T03:19:34Z",
+    "timestamp": 1784863174,
+    "category": "Machine Learning"
+  },
+  {
     "title": "Don't Trust the Label: License Laundering in AI Supply Chains",
     "url": "https://arxiv.org/abs/2607.20300",
     "discussion_url": "https://news.ycombinator.com/item?id=49030816",
@@ -133,15 +142,6 @@
     "date": "2026-07-23T22:06:16Z",
     "timestamp": 1784844376,
     "category": "Physical AI"
-  },
-  {
-    "title": "Which AI models understand insurance work?",
-    "url": "https://www.coveragecat.com/ai/leaderboard",
-    "discussion_url": "https://news.ycombinator.com/item?id=49028661",
-    "source": "coveragecat.com",
-    "date": "2026-07-23T22:03:26Z",
-    "timestamp": 1784844206,
-    "category": "Machine Learning"
   },
   {
     "title": "AMD calls CUDA a 'non-event'",
