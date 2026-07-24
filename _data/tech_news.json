@@ -1,65 +1,128 @@
 [
   {
-    "title": "Oracle severed 21,000 employees during an AI spending spree",
-    "url": "https://finance.yahoo.com/technology/ai/articles/oracle-severed-21-000-employees-114500493.html",
-    "discussion_url": "https://news.ycombinator.com/item?id=49032388",
-    "source": "finance.yahoo.com",
-    "date": "2026-07-24T07:45:25Z",
-    "timestamp": 1784879125,
+    "title": "WebGPU Unleashed: A Practical Tutorial",
+    "url": "https://shi-yan.github.io/webgpuunleashed/",
+    "discussion_url": "https://news.ycombinator.com/item?id=49035845",
+    "source": "shi-yan.github.io",
+    "date": "2026-07-24T14:04:50Z",
+    "timestamp": 1784901890,
+    "category": "Computer Architecture"
+  },
+  {
+    "title": "Open Weights and American AI Leadership [pdf]",
+    "url": "https://images.nvidia.com/pdf/Open-Weights-and-American-AI-Leadership.pdf",
+    "discussion_url": "https://news.ycombinator.com/item?id=49035751",
+    "source": "images.nvidia.com",
+    "date": "2026-07-24T13:58:12Z",
+    "timestamp": 1784901492,
     "category": "Machine Learning"
   },
   {
-    "title": "Computer science enrollment fell for the first time in 20 years",
-    "url": "https://www.businessinsider.com/computer-science-enrollment-fell-after-chatgpts-rise-economist-says-2026-7",
-    "discussion_url": "https://news.ycombinator.com/item?id=49032320",
-    "source": "businessinsider.com",
-    "date": "2026-07-24T07:35:04Z",
-    "timestamp": 1784878504,
+    "title": "Stop hard-wiring LLMs into your code",
+    "url": "https://wso2.com/library/blogs/ai-mediation-layer-ai-gateway/",
+    "discussion_url": "https://news.ycombinator.com/item?id=49035396",
+    "source": "wso2.com",
+    "date": "2026-07-24T13:38:22Z",
+    "timestamp": 1784900302,
     "category": "Machine Learning"
   },
   {
-    "title": "AI Overviews could push Reddit to end its $60M-a-year deal with Google",
-    "url": "https://www.neowin.net/news/ai-overviews-could-push-reddit-to-end-its-60-million-a-year-deal-with-google/",
-    "discussion_url": "https://news.ycombinator.com/item?id=49032246",
-    "source": "neowin.net",
-    "date": "2026-07-24T07:26:36Z",
-    "timestamp": 1784877996,
+    "title": "Oracle fires 21,000 employees to fund AI spending",
+    "url": "https://www.jpost.com/business-and-innovation/tech-and-start-ups/article-903442",
+    "discussion_url": "https://news.ycombinator.com/item?id=49035314",
+    "source": "jpost.com",
+    "date": "2026-07-24T13:33:12Z",
+    "timestamp": 1784899992,
     "category": "Machine Learning"
   },
   {
-    "title": "On AI",
-    "url": "https://jcs.org/2026/07/23/ai",
-    "discussion_url": "https://news.ycombinator.com/item?id=49032212",
-    "source": "jcs.org",
-    "date": "2026-07-24T07:20:10Z",
-    "timestamp": 1784877610,
+    "title": "Microsoft – Open Weights and American AI Leadership",
+    "url": "https://www.microsoft.com/en-us/corporate-responsibility/topics/open-weight/",
+    "discussion_url": "https://news.ycombinator.com/item?id=49035303",
+    "source": "microsoft.com",
+    "date": "2026-07-24T13:32:30Z",
+    "timestamp": 1784899950,
     "category": "Machine Learning"
   },
   {
-    "title": "Show HN: Continuum – switch AI coding agents without re-explaining your project",
-    "url": "https://github.com/AnasNafees1802/continuum",
-    "discussion_url": "https://news.ycombinator.com/item?id=49032115",
+    "title": "I let an AI agent run my job search: the real numbers, including the LLM bill",
+    "url": "https://find-best-job.com/en/blog/agent-job-search-real-numbers",
+    "discussion_url": "https://news.ycombinator.com/item?id=49034971",
+    "source": "find-best-job.com",
+    "date": "2026-07-24T13:05:05Z",
+    "timestamp": 1784898305,
+    "category": "Machine Learning"
+  },
+  {
+    "title": "Why hasn't AI increased unemployment?",
+    "url": "https://twitter.com/PeterMcCrory/status/2079979321607745905",
+    "discussion_url": "https://news.ycombinator.com/item?id=49034854",
+    "source": "twitter.com",
+    "date": "2026-07-24T12:52:27Z",
+    "timestamp": 1784897547,
+    "category": "Machine Learning"
+  },
+  {
+    "title": "LLMs Are Still Toxic, Stuck in the Past, and Bad at Math",
+    "url": "https://www.eyosias.dev/blog/llms-are-still-toxic-and-bad-at-math",
+    "discussion_url": "https://news.ycombinator.com/item?id=49034838",
+    "source": "eyosias.dev",
+    "date": "2026-07-24T12:51:13Z",
+    "timestamp": 1784897473,
+    "category": "Machine Learning"
+  },
+  {
+    "title": "Em Dash and AI",
+    "url": "https://lebaron.sh/posts/em-dash-ai-tell/",
+    "discussion_url": "https://news.ycombinator.com/item?id=49034746",
+    "source": "lebaron.sh",
+    "date": "2026-07-24T12:40:24Z",
+    "timestamp": 1784896824,
+    "category": "Machine Learning"
+  },
+  {
+    "title": "Do It by Hand First: Method for Keeping Critical Thinking Alive in the Age of AI",
+    "url": "https://blog.parentsguidetoai.ca/do-it-by-hand-first-critical-thinking.html",
+    "discussion_url": "https://news.ycombinator.com/item?id=49034523",
+    "source": "blog.parentsguidetoai.ca",
+    "date": "2026-07-24T12:20:31Z",
+    "timestamp": 1784895631,
+    "category": "Machine Learning"
+  },
+  {
+    "title": "Show HN: X402vps – Docker containers for AI agents, paid per hour with USDC",
+    "url": "https://x402vps.com",
+    "discussion_url": "https://news.ycombinator.com/item?id=49034474",
+    "source": "x402vps.com",
+    "date": "2026-07-24T12:15:44Z",
+    "timestamp": 1784895344,
+    "category": "Machine Learning"
+  },
+  {
+    "title": "The Robots Cometh",
+    "url": "https://time.com/article/2026/07/23/unitree-china-human-robotics/",
+    "discussion_url": "https://news.ycombinator.com/item?id=49034436",
+    "source": "time.com",
+    "date": "2026-07-24T12:11:51Z",
+    "timestamp": 1784895111,
+    "category": "Physical AI"
+  },
+  {
+    "title": "Show HN: A monorepo where AI agents can safely build and maintain applications",
+    "url": "https://github.com/louisbrulenaudet/monorepo-template",
+    "discussion_url": "https://news.ycombinator.com/item?id=49034424",
     "source": "github.com",
-    "date": "2026-07-24T07:05:03Z",
-    "timestamp": 1784876703,
+    "date": "2026-07-24T12:10:40Z",
+    "timestamp": 1784895040,
     "category": "Machine Learning"
   },
   {
-    "title": "A Pragmatic Approach to LLMs",
-    "url": "https://gracefulliberty.com/articles/pragmatic-llms/",
-    "discussion_url": "https://news.ycombinator.com/item?id=49032076",
-    "source": "gracefulliberty.com",
-    "date": "2026-07-24T07:00:01Z",
-    "timestamp": 1784876401,
-    "category": "Machine Learning"
-  },
-  {
-    "title": "The Effect of AI on Dunning Kruger",
-    "url": "https://blog.zoller.lu/2026/07/dunning-kruger-after-ai-gap-that-no.html",
-    "discussion_url": "https://news.ycombinator.com/item?id=49031973",
-    "source": "blog.zoller.lu",
-    "date": "2026-07-24T06:45:26Z",
-    "timestamp": 1784875526,
+    "title": "AI VS AI. How I transcribed my grandmothers book \"The house of Daisies\" Using AI",
+    "url": "https://www.meli.sh/posts/post3",
+    "discussion_url": "https://news.ycombinator.com/item?id=49034396",
+    "source": "meli.sh",
+    "date": "2026-07-24T12:07:23Z",
+    "timestamp": 1784894843,
     "category": "Machine Learning"
   },
   {
@@ -69,87 +132,6 @@
     "source": "japannews.yomiuri.co.jp",
     "date": "2026-07-24T06:44:13Z",
     "timestamp": 1784875453,
-    "category": "Physical AI"
-  },
-  {
-    "title": "It's an Apple Lisa, on a FPGA",
-    "url": "https://hackaday.com/2026/05/09/its-an-apple-lisa-on-a-fpga/",
-    "discussion_url": "https://news.ycombinator.com/item?id=49031791",
-    "source": "hackaday.com",
-    "date": "2026-07-24T06:16:07Z",
-    "timestamp": 1784873767,
-    "category": "Computer Architecture"
-  },
-  {
-    "title": "Codex Slides: open-source AI slide studio powered by Codex. Prompt, repo to deck",
-    "url": "https://github.com/nexu-io/codex-slides",
-    "discussion_url": "https://news.ycombinator.com/item?id=49031776",
-    "source": "github.com",
-    "date": "2026-07-24T06:13:48Z",
-    "timestamp": 1784873628,
-    "category": "Machine Learning"
-  },
-  {
-    "title": "China's All-Out Push to Catch Up with American AI Chips",
-    "url": "https://www.wsj.com/world/china/china-ai-chips-race-949050d0",
-    "discussion_url": "https://news.ycombinator.com/item?id=49031362",
-    "source": "wsj.com",
-    "date": "2026-07-24T04:58:21Z",
-    "timestamp": 1784869101,
-    "category": "Machine Learning"
-  },
-  {
-    "title": "The Sad Wives of AI",
-    "url": "https://www.wired.com/story/meet-the-sad-wives-of-ai/",
-    "discussion_url": "https://news.ycombinator.com/item?id=49031294",
-    "source": "wired.com",
-    "date": "2026-07-24T04:44:15Z",
-    "timestamp": 1784868255,
-    "category": "Machine Learning"
-  },
-  {
-    "title": "Google's slump in AI race driven in part by low morale",
-    "url": "https://www.axios.com/2026/07/23/googles-deep-mind-ai-model-race",
-    "discussion_url": "https://news.ycombinator.com/item?id=49031227",
-    "source": "axios.com",
-    "date": "2026-07-24T04:28:43Z",
-    "timestamp": 1784867323,
-    "category": "Machine Learning"
-  },
-  {
-    "title": "AI will not trigger employment collapse, staffing company Adecco Group says",
-    "url": "https://www.reuters.com/business/ai-will-not-trigger-employment-collapse-staffing-company-adecco-group-says-2026-07-23/",
-    "discussion_url": "https://news.ycombinator.com/item?id=49031153",
-    "source": "reuters.com",
-    "date": "2026-07-24T04:11:35Z",
-    "timestamp": 1784866295,
-    "category": "Machine Learning"
-  },
-  {
-    "title": "The cost of GPUs goes far beyond AI data centers",
-    "url": "https://www.theverge.com/cs/features/937356/ai-data-center-gpu-environmental-impact",
-    "discussion_url": "https://news.ycombinator.com/item?id=49030636",
-    "source": "theverge.com",
-    "date": "2026-07-24T02:35:23Z",
-    "timestamp": 1784860523,
-    "category": "Computer Architecture"
-  },
-  {
-    "title": "Nvidia Puts a 4B World Model on the Robot [Weekly Physical AI Roundup]",
-    "url": "https://topicqueue.substack.com/p/nvidia-puts-a-4b-world-model-on-the",
-    "discussion_url": "https://news.ycombinator.com/item?id=49029199",
-    "source": "topicqueue.substack.com",
-    "date": "2026-07-23T22:58:24Z",
-    "timestamp": 1784847504,
-    "category": "Physical AI"
-  },
-  {
-    "title": "Ground Robots Inherit the Kill Zone",
-    "url": "https://spectrum.ieee.org/ukraine-ground-drones",
-    "discussion_url": "https://news.ycombinator.com/item?id=49029119",
-    "source": "spectrum.ieee.org",
-    "date": "2026-07-23T22:49:36Z",
-    "timestamp": 1784846976,
     "category": "Physical AI"
   },
   {
