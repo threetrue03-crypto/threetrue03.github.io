@@ -10,6 +10,6 @@ permalink: /search.json
 {% endfor %}
 {% for item in auto_news %}
   {% capture search_text %}{{ item.title }} {{ item.category }} {{ item.source }} 기술 뉴스{% endcapture %}
-  {"title":{{ item.title | jsonify }},"description":{{ "관심 분야의 최신 기술 뉴스" | jsonify }},"category":{{ item.category | jsonify }},"type":"news","url":{{ item.url | jsonify }},"date":{{ item.date | jsonify }},"search":{{ search_text | strip_newlines | downcase | jsonify }}}{% unless forloop.last %},{% endunless %}
+  {"title":{{ item.title | jsonify }},"description":"","category":{{ item.category | jsonify }},"type":"news","url":{{ item.url | jsonify }},"date":{{ item.date | jsonify }},"search":{{ search_text | strip_newlines | downcase | jsonify }}}{% unless forloop.last %},{% endunless %}
 {% endfor %}
 ]

@@ -387,7 +387,7 @@
           <div class="briefing-grid">
           {% for item in auto_news limit: 3 %}
             <a class="briefing-story{% if forloop.first %} featured{% endif %}" href="{{ item.url | escape }}" target="_blank" rel="noreferrer">
-              <div><div class="briefing-label"><span>{{ item.category | escape }}</span><time>{{ item.date | date: "%Y.%m.%d" }}</time></div><h2>{{ item.title | escape }}</h2><p class="briefing-summary">Hacker News에서 발견한 {{ item.category | escape }} 관련 소식입니다.</p></div>
+              <div><div class="briefing-label"><span>{{ item.category | escape }}</span><time>{{ item.date | date: "%Y.%m.%d" }}</time></div><h2>{{ item.title | escape }}</h2></div>
               <div class="briefing-source"><span>{{ item.source | escape }}</span><span>원문 보기 ↗</span></div>
             </a>
           {% endfor %}
