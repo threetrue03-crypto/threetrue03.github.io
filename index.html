@@ -383,7 +383,7 @@
         {% endif %}
         {% if auto_news.size > 0 %}
         <section class="briefing-group" aria-labelledby="auto-news-title">
-          <h2 class="briefing-group-title" id="auto-news-title">새로 나온 기술 뉴스 <span>자동 수집</span></h2>
+          <h2 class="briefing-group-title" id="auto-news-title">새로 나온 기술 뉴스</h2>
           <div class="briefing-grid">
           {% for item in auto_news limit: 3 %}
             <a class="briefing-story{% if forloop.first %} featured{% endif %}" href="{{ item.url | escape }}" target="_blank" rel="noreferrer">

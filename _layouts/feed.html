@@ -44,7 +44,6 @@
     .item h2 a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
     .item-details{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}
     .detail{padding:5px 8px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:10px}
-    .detail.auto{color:var(--accent);border-color:var(--accent)}
     .summary{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin:12px 0 16px;color:var(--muted);font-size:14px;line-height:1.65}
     .creator{margin-bottom:-5px;font-size:12px}
     .item-links{display:flex;flex-wrap:wrap;gap:18px;color:var(--accent);font-size:12px}
@@ -160,7 +159,7 @@
 
       {% if page.post_type == "news" and auto_news.size > 0 %}
       <section class="feed-group">
-        <h2 class="feed-group-title">새로 나온 기술 뉴스 <span>자동 수집</span></h2>
+        <h2 class="feed-group-title">새로 나온 기술 뉴스</h2>
         <div class="feed-group-items" data-feed-group>
         {% for item in auto_news %}
           <article class="item" data-topic="{{ item.category | downcase | escape }}" data-order="{{ item.timestamp }}">
@@ -171,11 +170,6 @@
             </div>
             <div>
               <h2><a href="{{ item.url | escape }}" target="_blank" rel="noreferrer">{{ item.title | escape }}</a></h2>
-              <div class="item-details">
-                <span class="detail auto">자동 수집</span>
-                <span class="detail">추천 {{ item.score }}</span>
-                <span class="detail">댓글 {{ item.comments }}</span>
-              </div>
               <p class="summary">Hacker News에서 발견한 {{ item.category | escape }} 관련 소식입니다.</p>
               <div class="item-links">
                 <a href="{{ item.url | escape }}" target="_blank" rel="noreferrer">원문 ↗</a>

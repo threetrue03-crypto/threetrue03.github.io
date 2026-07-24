@@ -6,9 +6,7 @@
     "source": "arxiv.org",
     "date": "2026-07-24T03:07:06Z",
     "timestamp": 1784862426,
-    "category": "Machine Learning",
-    "score": 2,
-    "comments": 0
+    "category": "Machine Learning"
   },
   {
     "title": "AI Was Supposed to Lift Everybody., The Price Tag Says Otherwise",
@@ -17,9 +15,7 @@
     "source": "allyagentoperations.com",
     "date": "2026-07-24T03:06:07Z",
     "timestamp": 1784862367,
-    "category": "Machine Learning",
-    "score": 2,
-    "comments": 0
+    "category": "Machine Learning"
   },
   {
     "title": "The cost of GPUs goes far beyond AI data centers",
@@ -28,9 +24,7 @@
     "source": "theverge.com",
     "date": "2026-07-24T02:35:23Z",
     "timestamp": 1784860523,
-    "category": "Computer Architecture",
-    "score": 3,
-    "comments": 0
+    "category": "Computer Architecture"
   },
   {
     "title": "Why AI works worse in your language",
@@ -39,9 +33,7 @@
     "source": "artifipedia.com",
     "date": "2026-07-24T01:51:54Z",
     "timestamp": 1784857914,
-    "category": "Machine Learning",
-    "score": 3,
-    "comments": 0
+    "category": "Machine Learning"
   },
   {
     "title": "Brockovich Data Center Reporting – U.S. AI Data Center Awareness and Issue Map",
@@ -50,9 +42,7 @@
     "source": "brockovichdatacenter.com",
     "date": "2026-07-24T01:21:00Z",
     "timestamp": 1784856060,
-    "category": "Machine Learning",
-    "score": 2,
-    "comments": 0
+    "category": "Machine Learning"
   },
   {
     "title": "Show HN: Turo – An Aggressive Token-Saving Proxy for CLI AI Agents",
@@ -61,9 +51,7 @@
     "source": "github.com",
     "date": "2026-07-24T00:32:12Z",
     "timestamp": 1784853132,
-    "category": "Machine Learning",
-    "score": 2,
-    "comments": 1
+    "category": "Machine Learning"
   },
   {
     "title": "Intel stock jumps as it rides AI boom to fastest revenue growth in almost 15 yrs",
@@ -72,9 +60,7 @@
     "source": "cnbc.com",
     "date": "2026-07-24T00:18:35Z",
     "timestamp": 1784852315,
-    "category": "Machine Learning",
-    "score": 2,
-    "comments": 0
+    "category": "Machine Learning"
   },
   {
     "title": "If AI companies avoid AI slop, shouldn't we?",
@@ -83,9 +69,7 @@
     "source": "machinesociety.ai",
     "date": "2026-07-24T00:04:35Z",
     "timestamp": 1784851475,
-    "category": "Machine Learning",
-    "score": 4,
-    "comments": 1
+    "category": "Machine Learning"
   },
   {
     "title": "AI bet goes awry: Oracle fires 21,000 employees",
@@ -94,9 +78,7 @@
     "source": "jpost.com",
     "date": "2026-07-23T23:26:51Z",
     "timestamp": 1784849211,
-    "category": "Machine Learning",
-    "score": 13,
-    "comments": 2
+    "category": "Machine Learning"
   },
   {
     "title": "When AI Attacks AI: Why Every System Needs a Guard",
@@ -105,9 +87,7 @@
     "source": "medium.com",
     "date": "2026-07-23T23:09:15Z",
     "timestamp": 1784848155,
-    "category": "Machine Learning",
-    "score": 2,
-    "comments": 0
+    "category": "Machine Learning"
   },
   {
     "title": "A taxonomy of omnicidal futures involving artificial intelligence (2025)",
@@ -116,9 +96,7 @@
     "source": "arxiv.org",
     "date": "2026-07-23T22:51:13Z",
     "timestamp": 1784847073,
-    "category": "Machine Learning",
-    "score": 60,
-    "comments": 48
+    "category": "Machine Learning"
   },
   {
     "title": "Ground Robots Inherit the Kill Zone",
@@ -127,9 +105,7 @@
     "source": "spectrum.ieee.org",
     "date": "2026-07-23T22:49:36Z",
     "timestamp": 1784846976,
-    "category": "Physical AI",
-    "score": 4,
-    "comments": 0
+    "category": "Physical AI"
   },
   {
     "title": "Someone Call Tesla a Robotaxi, or SpaceX, Quick",
@@ -138,9 +114,7 @@
     "source": "bloomberg.com",
     "date": "2026-07-23T22:15:02Z",
     "timestamp": 1784844902,
-    "category": "Physical AI",
-    "score": 3,
-    "comments": 0
+    "category": "Physical AI"
   },
   {
     "title": "AI Kill Switch Act: Official Bill Text by Reps. Lieu and Moran (2026)",
@@ -149,9 +123,7 @@
     "source": "lieu.house.gov",
     "date": "2026-07-23T22:12:35Z",
     "timestamp": 1784844755,
-    "category": "Machine Learning",
-    "score": 8,
-    "comments": 5
+    "category": "Machine Learning"
   },
   {
     "title": "New flapping robot swims and flies like a diving bird",
@@ -160,9 +132,7 @@
     "source": "news.mit.edu",
     "date": "2026-07-23T22:06:16Z",
     "timestamp": 1784844376,
-    "category": "Physical AI",
-    "score": 3,
-    "comments": 0
+    "category": "Physical AI"
   },
   {
     "title": "Which AI models understand insurance work?",
@@ -171,9 +141,7 @@
     "source": "coveragecat.com",
     "date": "2026-07-23T22:03:26Z",
     "timestamp": 1784844206,
-    "category": "Machine Learning",
-    "score": 2,
-    "comments": 0
+    "category": "Machine Learning"
   },
   {
     "title": "AMD calls CUDA a 'non-event'",
@@ -182,9 +150,7 @@
     "source": "pcgamer.com",
     "date": "2026-07-23T21:51:15Z",
     "timestamp": 1784843475,
-    "category": "Computer Architecture",
-    "score": 10,
-    "comments": 0
+    "category": "Computer Architecture"
   },
   {
     "title": "DARPA Robotic mechanic for broken satellites launched",
@@ -193,9 +159,7 @@
     "source": "darpa.mil",
     "date": "2026-07-23T20:25:41Z",
     "timestamp": 1784838341,
-    "category": "Physical AI",
-    "score": 2,
-    "comments": 0
+    "category": "Physical AI"
   },
   {
     "title": "Learn WebGPU for C++",
@@ -204,8 +168,6 @@
     "source": "eliemichel.github.io",
     "date": "2026-07-23T14:55:32Z",
     "timestamp": 1784818532,
-    "category": "Computer Architecture",
-    "score": 90,
-    "comments": 12
+    "category": "Computer Architecture"
   }
 ]

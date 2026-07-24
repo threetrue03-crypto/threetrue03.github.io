@@ -155,7 +155,14 @@ def collect() -> list[dict]:
         topic_counts[category] = topic_counts.get(category, 0) + 1
         if len(selected) >= MAX_ITEMS:
             break
-    return selected
+    return [
+        {
+            key: value
+            for key, value in story.items()
+            if key not in {"score", "comments"}
+        }
+        for story in selected
+    ]
 
 
 def main() -> None:

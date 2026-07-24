@@ -22,8 +22,6 @@ TECH_NEWS_FIELDS = (
     "date",
     "timestamp",
     "category",
-    "score",
-    "comments",
 )
 
 
@@ -101,7 +99,7 @@ def validate_tech_news() -> tuple[int, list[str]]:
             dt.datetime.fromisoformat(str(item.get("date", "")).replace("Z", "+00:00"))
         except ValueError:
             errors.append(f"{prefix}: `date`가 올바른 ISO 날짜가 아닙니다")
-        for field in ("timestamp", "score", "comments"):
+        for field in ("timestamp",):
             if not isinstance(item.get(field), int) or item[field] < 0:
                 errors.append(f"{prefix}: `{field}`는 0 이상의 정수여야 합니다")
         url = str(item.get("url", ""))
