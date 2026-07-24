@@ -1,5 +1,131 @@
 [
   {
+    "title": "GitHub – makerspet/oomwoo: Open-source vacuum robot cleaner",
+    "url": "https://github.com/makerspet/oomwoo",
+    "discussion_url": "https://news.ycombinator.com/item?id=49040684",
+    "source": "github.com",
+    "date": "2026-07-24T19:40:30Z",
+    "timestamp": 1784922030,
+    "category": "Physical AI"
+  },
+  {
+    "title": "Ask HN: What's the best AI coding tool today?",
+    "url": "https://news.ycombinator.com/item?id=49040025",
+    "discussion_url": "https://news.ycombinator.com/item?id=49040025",
+    "source": "news.ycombinator.com",
+    "date": "2026-07-24T18:49:35Z",
+    "timestamp": 1784918975,
+    "category": "Machine Learning"
+  },
+  {
+    "title": "pixtuoid: AI coding agents, visualized as pixel-art coworkers in terminal office",
+    "url": "https://github.com/IvanWng97/pixtuoid",
+    "discussion_url": "https://news.ycombinator.com/item?id=49039960",
+    "source": "github.com",
+    "date": "2026-07-24T18:44:35Z",
+    "timestamp": 1784918675,
+    "category": "Machine Learning"
+  },
+  {
+    "title": "SpaceX at $100 Would Imply Zero AI Value, Morgan Stanley Says",
+    "url": "https://www.bloomberg.com/news/articles/2026-07-24/spacex-at-100-would-imply-zero-ai-value-says-morgan-stanley",
+    "discussion_url": "https://news.ycombinator.com/item?id=49039831",
+    "source": "bloomberg.com",
+    "date": "2026-07-24T18:34:16Z",
+    "timestamp": 1784918056,
+    "category": "Machine Learning"
+  },
+  {
+    "title": "Team uses AlphaFold AI to redesign gene-editing proteins to make them safer",
+    "url": "https://arstechnica.com/science/2026/07/team-uses-alphafold-ai-to-redesign-gene-editing-proteins-to-make-them-safer/",
+    "discussion_url": "https://news.ycombinator.com/item?id=49039822",
+    "source": "arstechnica.com",
+    "date": "2026-07-24T18:33:21Z",
+    "timestamp": 1784918001,
+    "category": "Machine Learning"
+  },
+  {
+    "title": "Canada's Anti-AI Movement Is Powered by an AI News Aggregator",
+    "url": "https://ethanplant.ca/writing/stop-the-datacentre/",
+    "discussion_url": "https://news.ycombinator.com/item?id=49039761",
+    "source": "ethanplant.ca",
+    "date": "2026-07-24T18:28:51Z",
+    "timestamp": 1784917731,
+    "category": "Machine Learning"
+  },
+  {
+    "title": "Zuckerberg's AI optimism blitz using nostalgia to sell AI future amid backlash",
+    "url": "https://fortune.com/2026/07/23/zuckerberg-ai-ad-optimism-backlash/",
+    "discussion_url": "https://news.ycombinator.com/item?id=49039334",
+    "source": "fortune.com",
+    "date": "2026-07-24T17:54:11Z",
+    "timestamp": 1784915651,
+    "category": "Machine Learning"
+  },
+  {
+    "title": "Alphabet's $205B AI spending plan spooks investors",
+    "url": "https://www.latimes.com/business/story/2026-07-23/alphabets-205-billion-ai-spending-plan-spooks-investors",
+    "discussion_url": "https://news.ycombinator.com/item?id=49039297",
+    "source": "latimes.com",
+    "date": "2026-07-24T17:50:22Z",
+    "timestamp": 1784915422,
+    "category": "Machine Learning"
+  },
+  {
+    "title": "AI has a weak spine. We proved it on R/AmIOverreacting",
+    "url": "https://modelsagree.com/labs/ai-judges-overreacting",
+    "discussion_url": "https://news.ycombinator.com/item?id=49039213",
+    "source": "modelsagree.com",
+    "date": "2026-07-24T17:44:15Z",
+    "timestamp": 1784915055,
+    "category": "Machine Learning"
+  },
+  {
+    "title": "Torchwright: Compile computation graphs into vanilla transformer weights",
+    "url": "https://ood.dev/posts/torchwright-intro/",
+    "discussion_url": "https://news.ycombinator.com/item?id=49038788",
+    "source": "ood.dev",
+    "date": "2026-07-24T17:17:06Z",
+    "timestamp": 1784913426,
+    "category": "Machine Learning"
+  },
+  {
+    "title": "Ask HN: Why call it \"inference\" instead of just \"model hosting\"?",
+    "url": "https://news.ycombinator.com/item?id=49038752",
+    "discussion_url": "https://news.ycombinator.com/item?id=49038752",
+    "source": "news.ycombinator.com",
+    "date": "2026-07-24T17:15:27Z",
+    "timestamp": 1784913327,
+    "category": "Machine Learning"
+  },
+  {
+    "title": "Google Ordered to Face AI Defamation Lawsuit",
+    "url": "https://news.bloomberglaw.com/esg/google-ordered-to-face-robby-starbucks-ai-defamation-lawsuit",
+    "discussion_url": "https://news.ycombinator.com/item?id=49038628",
+    "source": "news.bloomberglaw.com",
+    "date": "2026-07-24T17:08:54Z",
+    "timestamp": 1784912934,
+    "category": "Machine Learning"
+  },
+  {
+    "title": "AI forcing Big Tech to spend more than it earns; Wall Street hates it",
+    "url": "https://fortune.com/2026/07/23/ai-big-tech-never-spend-more-than-earns-wall-street-hates-it/",
+    "discussion_url": "https://news.ycombinator.com/item?id=49038395",
+    "source": "fortune.com",
+    "date": "2026-07-24T16:55:43Z",
+    "timestamp": 1784912143,
+    "category": "Machine Learning"
+  },
+  {
+    "title": "A CPU Made of Atoms: IBM's Breakthrough 0.7nm Transistors [video]",
+    "url": "https://www.youtube.com/watch?v=_mRJw2F6j5Q",
+    "discussion_url": "https://news.ycombinator.com/item?id=49037197",
+    "source": "youtube.com",
+    "date": "2026-07-24T15:34:52Z",
+    "timestamp": 1784907292,
+    "category": "Computer Architecture"
+  },
+  {
     "title": "WebGPU Unleashed: A Practical Tutorial",
     "url": "https://shi-yan.github.io/webgpuunleashed/",
     "discussion_url": "https://news.ycombinator.com/item?id=49035845",
@@ -7,123 +133,6 @@
     "date": "2026-07-24T14:04:50Z",
     "timestamp": 1784901890,
     "category": "Computer Architecture"
-  },
-  {
-    "title": "Open Weights and American AI Leadership [pdf]",
-    "url": "https://images.nvidia.com/pdf/Open-Weights-and-American-AI-Leadership.pdf",
-    "discussion_url": "https://news.ycombinator.com/item?id=49035751",
-    "source": "images.nvidia.com",
-    "date": "2026-07-24T13:58:12Z",
-    "timestamp": 1784901492,
-    "category": "Machine Learning"
-  },
-  {
-    "title": "Stop hard-wiring LLMs into your code",
-    "url": "https://wso2.com/library/blogs/ai-mediation-layer-ai-gateway/",
-    "discussion_url": "https://news.ycombinator.com/item?id=49035396",
-    "source": "wso2.com",
-    "date": "2026-07-24T13:38:22Z",
-    "timestamp": 1784900302,
-    "category": "Machine Learning"
-  },
-  {
-    "title": "Oracle fires 21,000 employees to fund AI spending",
-    "url": "https://www.jpost.com/business-and-innovation/tech-and-start-ups/article-903442",
-    "discussion_url": "https://news.ycombinator.com/item?id=49035314",
-    "source": "jpost.com",
-    "date": "2026-07-24T13:33:12Z",
-    "timestamp": 1784899992,
-    "category": "Machine Learning"
-  },
-  {
-    "title": "Microsoft – Open Weights and American AI Leadership",
-    "url": "https://www.microsoft.com/en-us/corporate-responsibility/topics/open-weight/",
-    "discussion_url": "https://news.ycombinator.com/item?id=49035303",
-    "source": "microsoft.com",
-    "date": "2026-07-24T13:32:30Z",
-    "timestamp": 1784899950,
-    "category": "Machine Learning"
-  },
-  {
-    "title": "I let an AI agent run my job search: the real numbers, including the LLM bill",
-    "url": "https://find-best-job.com/en/blog/agent-job-search-real-numbers",
-    "discussion_url": "https://news.ycombinator.com/item?id=49034971",
-    "source": "find-best-job.com",
-    "date": "2026-07-24T13:05:05Z",
-    "timestamp": 1784898305,
-    "category": "Machine Learning"
-  },
-  {
-    "title": "Why hasn't AI increased unemployment?",
-    "url": "https://twitter.com/PeterMcCrory/status/2079979321607745905",
-    "discussion_url": "https://news.ycombinator.com/item?id=49034854",
-    "source": "twitter.com",
-    "date": "2026-07-24T12:52:27Z",
-    "timestamp": 1784897547,
-    "category": "Machine Learning"
-  },
-  {
-    "title": "LLMs Are Still Toxic, Stuck in the Past, and Bad at Math",
-    "url": "https://www.eyosias.dev/blog/llms-are-still-toxic-and-bad-at-math",
-    "discussion_url": "https://news.ycombinator.com/item?id=49034838",
-    "source": "eyosias.dev",
-    "date": "2026-07-24T12:51:13Z",
-    "timestamp": 1784897473,
-    "category": "Machine Learning"
-  },
-  {
-    "title": "Em Dash and AI",
-    "url": "https://lebaron.sh/posts/em-dash-ai-tell/",
-    "discussion_url": "https://news.ycombinator.com/item?id=49034746",
-    "source": "lebaron.sh",
-    "date": "2026-07-24T12:40:24Z",
-    "timestamp": 1784896824,
-    "category": "Machine Learning"
-  },
-  {
-    "title": "Do It by Hand First: Method for Keeping Critical Thinking Alive in the Age of AI",
-    "url": "https://blog.parentsguidetoai.ca/do-it-by-hand-first-critical-thinking.html",
-    "discussion_url": "https://news.ycombinator.com/item?id=49034523",
-    "source": "blog.parentsguidetoai.ca",
-    "date": "2026-07-24T12:20:31Z",
-    "timestamp": 1784895631,
-    "category": "Machine Learning"
-  },
-  {
-    "title": "Show HN: X402vps – Docker containers for AI agents, paid per hour with USDC",
-    "url": "https://x402vps.com",
-    "discussion_url": "https://news.ycombinator.com/item?id=49034474",
-    "source": "x402vps.com",
-    "date": "2026-07-24T12:15:44Z",
-    "timestamp": 1784895344,
-    "category": "Machine Learning"
-  },
-  {
-    "title": "The Robots Cometh",
-    "url": "https://time.com/article/2026/07/23/unitree-china-human-robotics/",
-    "discussion_url": "https://news.ycombinator.com/item?id=49034436",
-    "source": "time.com",
-    "date": "2026-07-24T12:11:51Z",
-    "timestamp": 1784895111,
-    "category": "Physical AI"
-  },
-  {
-    "title": "Show HN: A monorepo where AI agents can safely build and maintain applications",
-    "url": "https://github.com/louisbrulenaudet/monorepo-template",
-    "discussion_url": "https://news.ycombinator.com/item?id=49034424",
-    "source": "github.com",
-    "date": "2026-07-24T12:10:40Z",
-    "timestamp": 1784895040,
-    "category": "Machine Learning"
-  },
-  {
-    "title": "AI VS AI. How I transcribed my grandmothers book \"The house of Daisies\" Using AI",
-    "url": "https://www.meli.sh/posts/post3",
-    "discussion_url": "https://news.ycombinator.com/item?id=49034396",
-    "source": "meli.sh",
-    "date": "2026-07-24T12:07:23Z",
-    "timestamp": 1784894843,
-    "category": "Machine Learning"
   },
   {
     "title": "Japanese AI Robots Used to Replicate Skilled Confectioners' Abilities",
